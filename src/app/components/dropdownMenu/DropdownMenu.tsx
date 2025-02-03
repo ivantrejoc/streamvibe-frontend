@@ -1,20 +1,24 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import styles from "./dropdownMenu.module.css"
+import styles from "./dropdownMenu.module.css";
+
 
 export default function Dropdown() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedPage, setSelectedPage] = useState(" ");
 
-  const pages = ["Home", "Movies & Shows", "Support", "Subscriptions"];
+  const routes = [
+    { name: "Home", href: "/" },
+    { name: "Movies and Shows", href: "/movies-and-shows" },
+    { name: "Support", href: "/support" },
+    { name: "Subscriptions", href: "subscriptions" }
+  ];
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleSelect = (page: string) => {
-    setSelectedPage(page);
+  const handleSelect = () => {
     setIsOpen(false);
   };
 
@@ -27,7 +31,6 @@ export default function Dropdown() {
           className={styles.button}
           onClick={toggleDropdown}
         >
-          {selectedPage}
           <Image
             src="/bars-3.png"
             alt="burger-menu-icon"
@@ -39,18 +42,16 @@ export default function Dropdown() {
 
         {/* Dropdown menu */}
         {isOpen && (
-          <div
-            className={styles.dropdownMenu}
-          >
+          <div className={styles.dropdownMenu}>
             <div className={styles.itemContainer}>
-              {pages.map((page, index) => (
+              {routes?.map((route, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={route.href}
                   className={styles.menuItem}
-                  onClick={() => handleSelect(page)}
+                  onClick={() => handleSelect()}
                 >
-                  {page}
+                  {route.name}
                 </a>
               ))}
             </div>

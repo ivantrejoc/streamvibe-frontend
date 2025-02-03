@@ -1,4 +1,5 @@
 import styles from "./support.module.css";
+
 export default function Support() {
   return (
     <div className={styles.page}>

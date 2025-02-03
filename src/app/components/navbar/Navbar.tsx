@@ -23,6 +23,13 @@ export default function Navbar() {
     };
   }, []);
 
+  const routes = [
+    { name: "Home", href: "/" },
+    { name: "Movies and Shows", href: "/movies-and-shows" },
+    { name: "Support", href: "/support" },
+    { name: "Subscriptions", href: "subscriptions" }
+  ];
+
   return (
     <div className={styles.mainContainer}>
       <Link href="/">
@@ -40,18 +47,11 @@ export default function Navbar() {
       {!isMobile ? (
         <div className={styles.desktopNavContainer}>
           <div className={styles.linksContainer}>
-            <Link className={styles.linkButton} href="/">
-              Home
-            </Link>
-            <Link href="/" className={styles.linkButton}>
-              Movies & Shows
-            </Link>
-            <Link className={styles.linkButton} href="/">
-              Support
-            </Link>
-            <Link className={styles.linkButton} href="/">
-              Subscriptions
-            </Link>
+            {routes?.map((route, index) => (
+              <Link key={index} className={styles.linkButton} href={route.href}>
+                {route.name}
+              </Link>
+            ))}
           </div>
           <div className={styles.actionsContainer}>
             <button className={styles.actionButton}>
