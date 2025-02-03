@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "./navbar.module.css";
 import DropdownMenu from "../dropdownMenu/DropdownMenu";
 
-export function Navbar() {
+export default function Navbar() {
   const [isMobile, setIsmobile] = useState(false);
 
   const handleSize = () => {

@@ -108,16 +108,20 @@
 }
 
 @media (max-width: 1024) {
+  .mainContainer {    
+    padding: 1.5rem 2rem;    
+  }
+  
   .linksContainer {
-    padding: 0.125rem;
-    gap: 1.125rem;    
+    padding: 0.525rem;
+    gap: 0.725rem;    
     width: 25.125rem;
   }
 
   .linkButton {
     padding: 0.875rem 0.5rem;
-    font-size: 0.575rem;
-    line-height: 100%;
+    font-size: 0.725rem;
+    line-height: 150%;
     gap: 0.125rem;
   }
 }
