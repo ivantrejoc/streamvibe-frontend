@@ -1,8 +1,7 @@
 .mainContainer {
   display: flex;
   width: 100dvw;
-  height: 12dvh;
-  padding: 1.875rem 20.125rem;
+  padding: 1.5rem 5rem;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
@@ -11,8 +10,8 @@
 
 .logoContainer {
   display: flex;
-  width: 12.4375rem;
-  height: 3.75rem;
+  width: 10.36458rem;
+  height: 3.125rem;
   justify-content: center;
   align-items: center;
   gap: 0.1875rem;
@@ -32,7 +31,7 @@
   align-items: center;
   justify-content: space-between;
   width: 70%;
-  height: inherit;
+  height: 3.8125rem;
   padding: 0;
   gap: 1.875rem;
 }
@@ -44,6 +43,8 @@
   justify-content: space-between;
   gap: 1.875rem;
   box-sizing: border-box;
+  width: 25,75rem;
+  height: 100%;
   left: 42.6875rem;
   top: 1.375rem;
   border-radius: 0.75rem;
@@ -51,15 +52,28 @@
   background: var(--Black-06, #0f0f0f);
 }
 
-.linksButtons {
+.linkButton {
   display: flex;
   padding: 0.875rem 1.5rem;
   align-items: center;
   gap: 0.625rem;
   box-sizing: border-box;
+  color: var(--Grey-75, #bfbfbf);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.3125rem */
+}
+
+.linkButton:hover {
   border-radius: 0.5rem;
-  border: 1px solid var(--Black-10, #1a1a1a);
   background: var(--Black-10, #1a1a1a);
+}
+
+.linkButton:active {
+  border-radius: 0.5rem;
+  background: var(--Black-10, #1a1a1a);
+  font-weight: 500;
 }
 
 .actionsContainer {
@@ -76,9 +90,36 @@
   width: 2.125rem;
   height: 2.125rem;
   border: none;
-  background: none;
+  background: transparent;
   box-sizing: border-box;
   position: relative;
+}
+
+.actionButton:hover {
+  border-radius: 0.5rem;
+  border: 1px solid var(--Black-06, #0f0f0f);
+  background: var(--Black-06, #0f0f0f);
+}
+
+.actionButton:active {
+  border-radius: 0.5rem;
+  border: 1px solid var(--Black-06, #0f0f0f);
+  background: var(--Black-06, #0f0f0f);
+}
+
+@media (max-width: 1024) {
+  .linksContainer {
+    padding: 0.125rem;
+    gap: 1.125rem;    
+    width: 25.125rem;
+  }
+
+  .linkButton {
+    padding: 0.875rem 0.5rem;
+    font-size: 0.575rem;
+    line-height: 100%;
+    gap: 0.125rem;
+  }
 }
 
 @media (max-width: 768) {

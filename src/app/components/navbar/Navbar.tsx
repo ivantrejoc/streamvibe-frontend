@@ -30,26 +30,26 @@ export function Navbar() {
           <Image
             src="/steamvibe-logo-white.png"
             alt="steamvibe-logo"
-            layout="responsive"
             width={250}
             height={60}
             className={styles.logo}
+            style={{ objectFit: "cover" }}
           />
         </div>
       </Link>
       {!isMobile ? (
         <div className={styles.desktopNavContainer}>
           <div className={styles.linksContainer}>
-            <Link className={styles.linksButtons} href="/">
+            <Link className={styles.linkButton} href="/">
               Home
             </Link>
-            <Link href="/" className={styles.linksButtons}>
+            <Link href="/" className={styles.linkButton}>
               Movies & Shows
             </Link>
-            <Link className={styles.linksButtons} href="/">
+            <Link className={styles.linkButton} href="/">
               Support
             </Link>
-            <Link className={styles.linksButtons} href="/">
+            <Link className={styles.linkButton} href="/">
               Subscriptions
             </Link>
           </div>
@@ -58,11 +58,19 @@ export function Navbar() {
               <Image
                 src="/icons8-magnifying-glass-192.png"
                 alt="magnifying-glass"
-                layout="fill"
+                width={30}
+                height={30}
+                style={{ objectFit: "cover" }}
               />
             </button>
             <button className={styles.actionButton}>
-              <Image src="/icons8-bell-192.png" alt="bell-icon" layout="fill" />
+              <Image
+                src="/icons8-bell-192.png"
+                alt="bell-icon"
+                width={30}
+                height={30}
+                style={{ objectFit: "cover" }}
+              />
             </button>
           </div>
         </div>
