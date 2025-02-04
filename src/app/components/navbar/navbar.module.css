@@ -108,6 +108,8 @@
   background: var(--Black-06, #0f0f0f);
 }
 
+/* Media Queries */
+
 @media (max-width: 1024) {
   .mainContainer {    
     padding: 1.5rem 2rem;    

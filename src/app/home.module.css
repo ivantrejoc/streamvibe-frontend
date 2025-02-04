@@ -129,6 +129,69 @@
 }
 
 /* Media Queries */
+@media (max-width: 1024) {
+  .heroContainer {
+    height: auto;
+    
+  }
+
+  .heroSubcontainer {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    align-self: stretch;
+    box-sizing: border-box;
+  }
+
+  .imageContainer {    
+    height: 11rem;
+  }
+
+  .movieImage {
+    object-fit: cover;
+  }
+
+  .transparentLogo {
+    width: 25rem;
+    height: 25rem;
+    left: 13.125rem;
+    top: 9.375rem;
+  }
+
+  .heroTextContainer {
+    padding: 0rem 5.75rem;
+    gap: 1.875rem;
+  }
+
+  .textContainer{
+    gap: 0.625rem;
+  }
+
+  .heroTitle {
+    font-size: 1.75rem;
+  }
+
+  .heroParagraph {
+    font-size: 0.875rem;
+  }
+
+  .heroButton {
+    padding: 0.875rem 1.5rem;
+    gap: 0.25rem;
+  }
+
+  .textButton {
+    font-size: 0.875rem;
+  }
+
+  .iconButton {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
 @media (max-width: 768) {
   .heroContainer {
     height: auto;
