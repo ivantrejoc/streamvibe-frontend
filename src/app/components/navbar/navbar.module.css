@@ -129,7 +129,7 @@
   }
 }
 
-@media (max-width: 768) {
+@media (max-width: 720) {
   .mainContainer {
     padding: 1.875rem 2.125rem;
   }

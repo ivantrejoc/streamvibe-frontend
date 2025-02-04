@@ -132,7 +132,6 @@
 @media (max-width: 1024) {
   .heroContainer {
     height: auto;
-    
   }
 
   .heroSubcontainer {
@@ -145,7 +144,7 @@
     box-sizing: border-box;
   }
 
-  .imageContainer {    
+  .imageContainer {
     height: 11rem;
   }
 
@@ -156,7 +155,6 @@
   .transparentLogo {
     width: 25rem;
     height: 25rem;
-    left: 13.125rem;
     top: 9.375rem;
   }
 
@@ -165,7 +163,7 @@
     gap: 1.875rem;
   }
 
-  .textContainer{
+  .textContainer {
     gap: 0.625rem;
   }
 
@@ -192,10 +190,9 @@
   }
 }
 
-@media (max-width: 768) {
+@media (max-width: 720) {
   .heroContainer {
     height: auto;
-    
   }
 
   .heroSubcontainer {
@@ -208,7 +205,7 @@
     box-sizing: border-box;
   }
 
-  .imageContainer {    
+  .imageContainer {
     height: 5.575rem;
   }
 
@@ -219,7 +216,6 @@
   .transparentLogo {
     width: 12.5rem;
     height: 12.5rem;
-    left: 5.9375rem;
     top: 9.375rem;
   }
 
@@ -228,7 +224,7 @@
     gap: 1.875rem;
   }
 
-  .textContainer{
+  .textContainer {
     gap: 0.625rem;
   }
 

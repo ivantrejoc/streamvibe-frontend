@@ -1,3 +1,4 @@
+"use client";
 import styles from "./moviesAndShows.module.css";
 
 export default function MoviesAndShows() {
