@@ -38,7 +38,7 @@ export default function Navbar() {
             src="/steamvibe-logo-white.png"
             alt="steamvibe-logo"
             width={250}
-            height={60}
+            height={83.3}
             className={styles.logo}
             style={{ objectFit: "cover" }}
           />

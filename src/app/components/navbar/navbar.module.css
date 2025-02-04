@@ -5,13 +5,15 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 999;
 }
 
 .logoContainer {
   display: flex;
-  width: 10.36458rem;
+  width: 12.4375rem;
   height: 3.125rem;
   justify-content: center;
   align-items: center;
