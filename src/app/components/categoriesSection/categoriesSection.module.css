@@ -1,0 +1,127 @@
+.categoriesMainContainer {
+   display: flex;
+  width: 99.8125rem;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5rem;
+  margin-top: 12.5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.textContainer {
+   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.categoriesTitle {
+  color: var(--Absolute-White, #fff);
+  font-size: 2.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  align-self: stretch;
+}
+
+.categoriesHeading {
+  color: var(--Grey-60, #999);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  align-self: stretch;
+}
+
+.cardsContainer {
+    width: 100%;
+  height: 21.375rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.875rem;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.categoryCard {
+  width: 18.4625rem;
+  height: 100%;
+  display: flex;
+  padding: 1.875rem;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+  border-radius: 0.75rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-10, #1a1a1a);
+  box-sizing: border-box;
+}
+
+.imagesContainer {
+  width: 14.8124rem;
+  height: 15.75rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 5.2px;
+  grid-row-gap: 5.2px;
+  mask-image: linear-gradient(to top, transparent 3%, var(--Black-10, #1a1a1a));
+}
+
+.frame1 {
+  grid-area: 1 / 1 / 2 / 2;
+  border-radius: 0.625rem;
+  flex: 1 0 0;
+  align-self: stretch;
+  box-sizing: border-box;
+  position: relative;
+}
+.frame2 {
+  grid-area: 1 / 2 / 2 / 3;
+  border-radius: 0.625rem;
+  flex: 1 0 0;
+  align-self: stretch;
+  box-sizing: border-box;
+  position: relative;
+}
+.frame3 {
+  grid-area: 2 / 2 / 3 / 3;
+  border-radius: 0.625rem;
+  flex: 1 0 0;
+  align-self: stretch;
+  box-sizing: border-box;
+  position: relative;
+}
+.frame4 {
+  grid-area: 2 / 1 / 3 / 2;
+  border-radius: 0.625rem;
+  flex: 1 0 0;
+  align-self: stretch;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.categoryTitleContainer {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.categoryTitle {
+  color: var(--Absolute-White, #fff);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  flex: 1 0 0;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
