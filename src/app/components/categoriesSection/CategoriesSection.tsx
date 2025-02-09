@@ -33,6 +33,10 @@ export default function CategoriesSection() {
         className={styles.carouselContainer}
         breakpoints={{
           720: {
+            slidesPerView: 2,
+            spaceBetween: 70
+          },
+          1024: {
             slidesPerView: 4,
             spaceBetween: 100
           }

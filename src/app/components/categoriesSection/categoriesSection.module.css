@@ -158,6 +158,27 @@
 }
 
 /* Media Queries */
+
+@media (max-width: 1024) {
+  .categoriesMainContainer {
+    width: 100%;
+    margin-top: 8.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .categoriesTitle {
+    font-size: 1.75rem;
+  }
+
+  .categoriesHeading {
+    font-size: 0.875rem;
+  }
+
+  :global(.swiper-button-prev),
+  :global(.swiper-button-next) {
+    --swiper-navigation-size: 3rem;
+  }
+}
 @media (max-width: 720) {
   .categoriesMainContainer {
     margin-top: 5.5rem;
