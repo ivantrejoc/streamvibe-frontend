@@ -99,8 +99,14 @@
     border: none;
     background: var(--Red-45, #e50000);
     box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
   }
   
+  .heroButton:hover{
+    background: var(--Red-30, #ff0000);
+    transform: scale(1.1);
+  }
+
   .textButton {
     color: #fff;
     font-size: 1.125rem;
