@@ -22,8 +22,8 @@ export default function CategoriesSection() {
       </div>
 
       <Swiper
-        slidesPerView={4}
-        spaceBetween={100}
+        slidesPerView={1}
+        spaceBetween={50}
         loop={true}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         navigation={true}
@@ -31,6 +31,12 @@ export default function CategoriesSection() {
         keyboard={{ enabled: true }}
         modules={[Navigation, Pagination, Autoplay, Keyboard]}
         className={styles.carouselContainer}
+        breakpoints={{
+          720: {
+            slidesPerView: 4,
+            spaceBetween: 100
+          }
+        }}
       >
         <SwiperSlide className={styles.categoryCard}>
           <Link href="/">
