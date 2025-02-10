@@ -1,24 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useIsMobile } from "@streambive/hooks";
 import Image from "next/image";
 import styles from "./homeHero.module.css";
 export default function HomeHero() {
-    const [isMobile, setIsmobile] = useState(false);
+  const isMobile = useIsMobile();
 
-  const handleSize = () => {
-    if (window.innerWidth < 768) {
-      setIsmobile(true);
-    }
-  };
-
-  useEffect(() => {
-    handleSize();
-
-    window.addEventListener("resize", handleSize);
-    return () => {
-      window.removeEventListener("resize", handleSize);
-    };
-  }, []);
   return (
     <div className={styles.heroContainer}>
       <div className={styles.heroSubcontainer}>

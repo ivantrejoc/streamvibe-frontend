@@ -11,6 +11,7 @@
 }
 
 .textContainer {
+  background: red;
   width: 100%;
   display: flex;
   padding-right: 18.75rem;
@@ -22,6 +23,8 @@
 }
 
 .deviceTitle {
+  background: plum;
+  width: 100%;
   color: var(--Absolute-White, #fff);
   font-size: 2.375rem;
   font-style: normal;
@@ -31,6 +34,8 @@
 }
 
 .deviceHeading {
+  background: plum;
+  width: 100%;
   color: var(--Grey-60, #999);
   font-size: 1.125rem;
   font-style: normal;
@@ -93,5 +98,69 @@
   align-self: stretch;
 }
 
-
 /* Media Queries */
+
+@media (max-width: 1280) {
+  .devicesMainContainer {
+    gap: 3.75rem;
+  }
+
+  .deviceCardsContainer {
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.25rem;
+  }
+
+  .textContainer {
+    padding-right: 5.75rem;
+  }
+
+  .deviceCard {
+    padding: 2.5rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 720) {
+  .devicesMainContainer {
+    width: 100%;
+    gap: 2.5rem;
+  }
+
+  .textContainer {
+    padding-right: 0;
+    gap: 0.625rem;
+    align-self: stretch;
+  }
+
+  .deviceTitle {
+    font-size: 1.25rem;
+  }
+
+  .deviceHeading {
+    font-size: 0.875rem;
+  }
+
+  .deviceCardsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    align-self: stretch;
+    box-sizing: border-box;
+  }
+
+  .deviceCard {
+    padding: 1.5rem;
+    gap: 1.25rem;
+    align-self: stretch;
+    box-sizing: border-box;
+  }
+
+  .cardTitle{
+    font-size: 1.125rem;
+  }
+
+  .cardDescription{
+    font-size: 0.875rem;
+  }
+}

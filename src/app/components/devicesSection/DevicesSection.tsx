@@ -1,7 +1,11 @@
+"use client";
 import Image from "next/image";
 import styles from "./devicesSection.module.css";
+import { useIsMobile } from "@streambive/hooks";
 
 export default function DevicesSection() {
+    const isMobile = useIsMobile();
+    
     const devices = [
         {
           name: "Smartphones",

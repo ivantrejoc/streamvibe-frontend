@@ -1,27 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useIsMobile } from "@streambive/hooks";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./navbar.module.css";
 import DropdownMenu from "../dropdownMenu/DropdownMenu";
 
 export default function Navbar() {
-  const [isMobile, setIsmobile] = useState(false);
-
-  const handleSize = () => {
-    if (window.innerWidth < 768) {
-      setIsmobile(true);
-    }
-  };
-
-  useEffect(() => {
-    handleSize();
-
-    window.addEventListener("resize", handleSize);
-    return () => {
-      window.removeEventListener("resize", handleSize);
-    };
-  }, []);
+  const isMobile = useIsMobile();
 
   const routes = [
     { name: "Home", href: "/" },
