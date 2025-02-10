@@ -173,8 +173,7 @@
     justify-content: center;
   }
 
-  .imagesContainer {
-    background: red;
+  .imagesContainer {   
     width: 12.8124rem;
   }
 }
