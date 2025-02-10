@@ -23,7 +23,7 @@ export default function CategoriesSection() {
 
       <Swiper
         slidesPerView={1}
-        spaceBetween={50}
+        spaceBetween={150}
         loop={true}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         navigation={true}
@@ -34,9 +34,17 @@ export default function CategoriesSection() {
         breakpoints={{
           720: {
             slidesPerView: 2,
-            spaceBetween: 70
+            spaceBetween: 100
           },
           1024: {
+            slidesPerView: 2,
+            spaceBetween: 100
+          },
+          1280: {
+            slidesPerView: 3,
+            spaceBetween: 120
+          },
+          1440: {
             slidesPerView: 4,
             spaceBetween: 100
           }
