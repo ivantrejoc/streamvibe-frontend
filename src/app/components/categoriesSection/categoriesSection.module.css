@@ -160,7 +160,7 @@
 
 @media (max-width: 1280px) {
   .categoriesMainContainer {
-    margin: 30rem 5% 0;
+    margin: 14rem 5% 0;
   }
 
   .carouselContainer {
@@ -168,7 +168,7 @@
   }
   .categoryCard {
     width: 14.8124rem;
-    padding: 1rem;
+    padding: 2rem 1rem;
     align-items: center;
     justify-content: center;
   }

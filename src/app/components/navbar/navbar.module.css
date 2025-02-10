@@ -46,7 +46,7 @@
   justify-content: space-between;
   gap: 1.875rem;
   box-sizing: border-box;
-  width: 25,75rem;
+  width: 60%;
   height: 100%;
   left: 42.6875rem;
   top: 1.375rem;
@@ -112,20 +112,29 @@
 
 /* Media Queries */
 
-@media (max-width: 1024) {
-  .mainContainer {    
-    padding: 1.5rem 2rem;    
+@media (max-width: 1280) {
+  .mainContainer {
+    padding: 1.5rem 2rem;
   }
-  
+  .desktopNavContainer {
+    width: 75%;
+  }
+
   .linksContainer {
     padding: 0.525rem;
-    gap: 0.725rem;    
-    width: 25.125rem;
+    gap: 0.725rem;
+    width: 70%;
+  }
+}
+
+@media (max-width: 1024) {
+  .desktopNavContainer {
+    width: 70%;
   }
 
   .linkButton {
     padding: 0.875rem 0.5rem;
-    font-size: 0.725rem;
+    font-size: 0.625rem;
     line-height: 150%;
     gap: 0.125rem;
   }

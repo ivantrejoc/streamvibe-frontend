@@ -2,6 +2,7 @@
 import { HomeHero } from "./components/homeHero";
 import { CategoriesSection } from "./components/categoriesSection";
 import styles from "./home.module.css";
+import { DevicesSection } from "./components/devicesSection";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <main className={styles.main}>
         <HomeHero />
         <CategoriesSection />
+        <DevicesSection />
       </main>
     </div>
   );
