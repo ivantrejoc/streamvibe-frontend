@@ -11,7 +11,6 @@
 }
 
 .textContainer {
-  background: red;
   width: 100%;
   display: flex;
   padding-right: 18.75rem;
@@ -23,7 +22,6 @@
 }
 
 .deviceTitle {
-  background: plum;
   width: 100%;
   color: var(--Absolute-White, #fff);
   font-size: 2.375rem;
@@ -34,7 +32,6 @@
 }
 
 .deviceHeading {
-  background: plum;
   width: 100%;
   color: var(--Grey-60, #999);
   font-size: 1.125rem;
@@ -120,7 +117,7 @@
   }
 }
 
-@media (max-width: 720) {
+@media (max-width: 1024) {
   .devicesMainContainer {
     width: 100%;
     gap: 2.5rem;
@@ -141,12 +138,9 @@
   }
 
   .deviceCardsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-    align-self: stretch;
-    box-sizing: border-box;
+    height: auto;
+    grid-column-gap: 0.875rem;
+    grid-row-gap: 0.875rem;
   }
 
   .deviceCard {
@@ -156,11 +150,22 @@
     box-sizing: border-box;
   }
 
-  .cardTitle{
+  .cardTitle {
     font-size: 1.125rem;
   }
 
-  .cardDescription{
+  .cardDescription {
     font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 720) {
+  .deviceCardsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    align-self: stretch;
+    box-sizing: border-box;
   }
 }
