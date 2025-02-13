@@ -1,0 +1,91 @@
+.faqSectionContainer {
+  display: flex;
+  width: 90%;
+  height: auto;
+  margin: 9.38rem 5% 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.headingContainer {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 6.25rem;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.875rem;
+  flex: 1 0 0;
+  box-sizing: border-box;
+}
+
+.faqTitle {
+  color: var(--Absolute-White, #fff);
+  font-size: 2.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 3.5625rem */
+  align-self: stretch;
+}
+
+.faqParagraph {
+  color: var(--Grey-60, #999);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.6875rem */
+  align-self: stretch;
+}
+
+.faqButton {
+  display: flex;
+  padding: 1.125rem 1.5rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+  border-radius: 0.5rem;
+  background: var(--Red-45, #e50000);
+  box-sizing: border-box;
+  color: var(--Absolute-White, #fff);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 1.6875rem */
+  transition: transform 0.3s ease-in-out;
+}
+
+.faqButton:hover {
+  background: var(--Red-30, #ff0000);
+  transform: scale(1.1);
+}
+
+.faqItemsContainer {
+   width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-auto-rows: min-content;
+  grid-column-gap: 5rem;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1 0 0;
+  box-sizing: border-box;
+}

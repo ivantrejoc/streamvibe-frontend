@@ -1,0 +1,113 @@
+.closed {
+  width: 100%;
+  max-height: 200px;
+  display: flex;
+  padding: 1.875rem 0;
+  align-items: space-between;
+  gap: 1.5rem;
+  align-self: stretch;
+  box-sizing: border-box;
+  border-bottom: 0.0625rem solid transparent;
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(229, 0, 0, 0) 0%,
+    #e50000 16.67%,
+    rgba(229, 0, 0, 0) 100%
+  );
+  border-image-slice: 1;
+}
+
+.open {
+  width: 100%;
+  max-width: 51.375rem;
+  max-height: 200px;
+  display: flex;
+  padding: 2.125rem 0;
+  align-items: flex-start;
+  gap: 1.5rem;
+  align-self: stretch;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.faqButton {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.faqIndex {
+  display: flex;
+  padding: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.625rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-12, #1f1f1f);
+}
+
+.id {
+  color: var(--Absolute-White, #fff);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  flex: 1 0 0;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.textContainerOpen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-height: 100px;
+  gap: 1.25rem;
+  flex: 1 0 0;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.title {
+  color: var(--Absolute-White, #fff);
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 2.0625rem */
+  align-self: stretch;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: var(--Grey-60, #999);
+  font-family: Manrope;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.6875rem */
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.icon {
+  color: white;
+  font-size: 20px;
+}
+
+.show {
+  max-height: 100px;
+  opacity: 1;
+}
