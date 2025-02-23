@@ -68,7 +68,7 @@
 }
 
 .faqItemsContainer {
-   width: 100%;
+  width: 100%;
   height: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -88,4 +88,66 @@
   align-items: flex-start;
   flex: 1 0 0;
   box-sizing: border-box;
+}
+
+/* Media Queries */
+
+@media (max-width: 1024) {
+  .faqSectionContainer {
+    margin: 3.25rem 5% 0;
+    width: 90%;
+    gap: 2.5rem;
+  }
+
+  .headingContainer {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 6.25rem;
+    box-sizing: border-box;
+  }
+  .faqTitle {
+    font-size: 1.75rem;
+  }
+  .faqHeading {
+    font-size: 0.875rem;
+  }
+
+  .faqButton {
+    padding: 1rem 1.25rem;
+    font-size: 1.025rem;
+  }
+}
+
+@media (max-width: 720) {
+  .headingContainer {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1.25rem;
+    align-self: stretch;
+  }
+
+  .textContainer {
+    gap: 0.625rem;
+    align-self: stretch;
+  }
+
+  .faqButton {
+    padding: 0.875rem 1.25rem;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    box-sizing: border-box;
+  }
+
+  .faqItemsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 1.25rem;
+    align-self: stretch;
+    box-sizing: border-box;
+  }
 }

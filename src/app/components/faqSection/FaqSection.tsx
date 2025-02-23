@@ -56,7 +56,7 @@ export default function FaqSection() {
       <div className={styles.headingContainer}>
         <div className={styles.textContainer}>
           <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
-          <p className={styles.faqParagraph}>
+          <p className={styles.faqHeading}>
             Got questions? We&apos;ve got answers! Check out our FAQ section to
             find answers to the most common questions about StreamVibe.
           </p>
