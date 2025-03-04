@@ -34,7 +34,7 @@ export default function CategoriesSection() {
         breakpoints={{
           720: {
             slidesPerView: 2,
-            spaceBetween: 65,
+            spaceBetween: 50,
             centeredSlides: true
           },
           1024: {
