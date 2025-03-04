@@ -113,6 +113,16 @@
 }
 
 /* Media Queries */
+@media(max-width: 1280){
+  .open {
+    
+    max-height: 15rem;
+  }
+
+  .textContainerOpen {
+    max-height: 15rem;
+  }
+}
 
 @media (max-width: 1024) {
   .open {
