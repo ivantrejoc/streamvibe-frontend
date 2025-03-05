@@ -1,9 +1,10 @@
 "use client";
 import { HomeHero } from "./components/homeHero";
-import { CategoriesSection } from "./components/categoriesSection";
+import { CategoriesSection } from "../categoriesSection";
 import styles from "./home.module.css";
 import { DevicesSection } from "./components/devicesSection";
 import FaqSection from "./components/faqSection/FaqSection";
+import { PricingSection } from "./components/pricingSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <CategoriesSection />
         <DevicesSection />
         <FaqSection />
+        <PricingSection/>
       </main>
     </div>
   );

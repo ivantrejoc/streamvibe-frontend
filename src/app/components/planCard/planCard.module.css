@@ -1,0 +1,104 @@
+.mainCardContainer {
+  display: flex;
+  padding: 3.125rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3.125rem;
+  flex: 1 0 0;
+  border-radius: 0.75rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-10, #1a1a1a);
+}
+
+.textContainer {
+  height: 8.3125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.cardTitle {
+  color: var(--Absolute-White, #fff);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 2.25rem */
+  align-self: stretch;
+}
+
+.cardParagraph {
+  color: var(--Grey-60, #999);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.6875rem */
+  align-self: stretch;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.25rem;
+  box-sizing: border-box;
+}
+
+.price {
+  color: var(--Absolute-White, #fff);
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 73%; /* 1.825rem */
+}
+
+.period {
+  color: var(--Grey-60, #999);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 73%; /* 0.82125rem */
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.trialButton {
+  display: flex;
+  padding: 1.125rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex: 1 0 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-08, #141414);
+  color: var(--Absolute-White, #fff);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 1.6875rem */
+}
+
+.selectPlanButton {
+  display: flex;
+  padding: 1.125rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex: 1 0 0;
+  border-radius: 0.5rem;
+  background: var(--Red-45, #e50000);
+  color: var(--Absolute-White, #fff);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 1.6875rem */
+}
