@@ -42,7 +42,7 @@ export default function DevicesSection() {
   ];
 
   return (
-    <div className={styles.devicesMainContainer}>
+    <div id="devices" className={styles.devicesMainContainer}>
       <div className={styles.textContainer}>
         <h2 className={styles.deviceTitle}>
           We Provide you streaming experience across various devices.

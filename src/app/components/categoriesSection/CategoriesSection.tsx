@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function CategoriesSection() {
   return (
-    <div className={styles.categoriesMainContainer}>
+    <div id="categories" className={styles.categoriesMainContainer}>
       <div className={styles.textContainer}>
         <h2 className={styles.categoriesTitle}>
           Explore our wide variety of categories
