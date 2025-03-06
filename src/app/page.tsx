@@ -5,6 +5,7 @@ import styles from "./home.module.css";
 import { DevicesSection } from "./components/devicesSection";
 import FaqSection from "./components/faqSection/FaqSection";
 import { PricingSection } from "./components/pricingSection";
+import { FreeTrialHero } from "./components/freeTrialHero";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <DevicesSection />
         <FaqSection />
         <PricingSection/>
+        <FreeTrialHero/>
       </main>
     </div>
   );
