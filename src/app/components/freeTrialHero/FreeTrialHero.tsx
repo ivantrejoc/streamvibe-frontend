@@ -8,7 +8,7 @@ export default function FreeTrialHero() {
         <h2 className={styles.cta}>Start your free trial today!</h2>
         <p className={styles.paragraph}>And enjoy the best movies and shows with StreamVibe.</p>
     </div>
-    <Link href={"/"} className={styles.actionButton}>Start a Free Trail</Link>
+    <Link href={"/"} className={styles.actionButton}>Start a Free Trial</Link>
    </div>
   )
 }
