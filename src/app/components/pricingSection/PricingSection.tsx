@@ -1,5 +1,3 @@
-//
-
 import { useState } from "react";
 import { PlanCard } from "../planCard";
 import styles from "./pricingSection.module.css";
@@ -7,12 +5,10 @@ import styles from "./pricingSection.module.css";
 export default function PricingSection() {
   const [isYearly, setIsYearly] = useState(false);
 
-  // Función para manejar el cambio de periodo
   const periodHandler = (isAnnual: boolean) => {
     setIsYearly(isAnnual);
   };
 
-  // Definir los planes con precios mensuales y anuales
   const plans = [
     {
       id: 1,
@@ -41,7 +37,7 @@ export default function PricingSection() {
   ];
 
   return (
-    <div className={styles.pricingMainContainer}>
+    <div id="pricing" className={styles.pricingMainContainer}>
       <div className={styles.headingContainer}>
         <div className={styles.textContainer}>
           <h2 className={styles.title}>
@@ -55,7 +51,9 @@ export default function PricingSection() {
         </div>
         <div className={styles.tabsContainer}>
           <button
-            className={`${styles.tabButton} ${!isYearly ? styles.isActive : ""}`}
+            className={`${styles.tabButton} ${
+              !isYearly ? styles.isActive : ""
+            }`}
             onClick={() => periodHandler(false)}
           >
             Monthly

@@ -22,7 +22,7 @@ export default function Footer() {
                   <Link href={"/#devices"} className={styles.link}>
                     Devices
                   </Link>
-                  <Link href={"/"} className={styles.link}>
+                  <Link href={"/#pricing"} className={styles.link}>
                     Pricing
                   </Link>
                   <Link href={"/#faq"} className={styles.link}>
@@ -122,7 +122,7 @@ export default function Footer() {
             </div>
           </div>
           <div className={styles.bottomContainer}>
-            <p className={styles.copyright}>@2023 streamvib, All Rights Reserved</p>
+            <p className={styles.copyright}>@2025 streamvib, All Rights Reserved</p>
             <div className={styles.bottomLinksContainer}>
               <Link href={"/"} className={styles.bottomLink}>
                 Terms of Use
@@ -148,7 +148,7 @@ export default function Footer() {
                 <Link href={"/#devices"} className={styles.link}>
                   Devices
                 </Link>
-                <Link href={"/"} className={styles.link}>
+                <Link href={"/#pricing"} className={styles.link}>
                   Pricing
                 </Link>
                 <Link href={"/#faq"} className={styles.link}>
@@ -243,7 +243,7 @@ export default function Footer() {
             </div>
           </div>
           <div className={styles.bottomContainer}>
-            <p>@2023 streamvib, All Rights Reserved</p>
+            <p>@2025 streamvib, All Rights Reserved</p>
             <div className={styles.bottomLinksContainer}>
               <Link href={"/"} className={styles.bottomLink}>
                 Terms of Use
