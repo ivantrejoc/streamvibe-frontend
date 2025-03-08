@@ -52,3 +52,9 @@ a {
   --swiper-pagination-bullet-height: 0.25rem;
   --swiper-pagination-bullet-border-radius: 6.25rem;
 }
+
+@media (max-width: 720px) {
+  .swiper-pagination {
+    display: none !important;
+  }
+}

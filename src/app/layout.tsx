@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
+import StoreProvider from "@streambive/redux/StoreProvider";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -23,9 +24,12 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className={manrope.className}>
-        <Navbar /> 
-        {children}
-        <Footer /></body>
+        <StoreProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </StoreProvider>
+      </body>
     </html>
   );
 }

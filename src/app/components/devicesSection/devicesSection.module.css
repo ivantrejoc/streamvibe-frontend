@@ -161,7 +161,7 @@
 }
 
 @media (max-width: 720px) {
-  .deviceCardsContainer {    
+  .deviceCardsContainer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
