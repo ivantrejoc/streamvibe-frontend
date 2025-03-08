@@ -47,27 +47,6 @@
   overflow: hidden;
 }
 
-/* Categories carousel navigation buttons */
-:global(.swiper-button-prev),
-:global(.swiper-button-next) {
-  --swiper-navigation-size: 4rem;
-  --swiper-navigation-sides-offset: 1rem;
-  --swiper-navigation-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-:global(.swiper-button-prev:hover),
-:global(.swiper-button-next:hover) {
-  --swiper-navigation-color: #e50000;
-}
-
-:global(.swiper-pagination-bullet) {
-  --swiper-pagination-color: #e50000;
-  --swiper-pagination-bullet-inactive-color: #ffffff;
-  --swiper-pagination-bullet-inactive-opacity: 0.2;
-}
 
 .categoryCard {
   width: 18.4625rem;

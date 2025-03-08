@@ -1,39 +1,18 @@
 .page {
-    background: inherit;
-    display: grid;
-    grid-template-rows: 20px 1fr 20px;
-    align-items: center;
-    justify-items: center;
-    min-height: 100dvh;
-    padding: 80px;
-    gap: 64px;
-  }
-  
-  .main {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    grid-row-start: 2;
-  }
-  
-  .title {
-    font-weight: 700;
-    font-size: 5rem;
-    color: cyan;
-  }
-  
-  @media (max-width: 600px) {
-    .page {
-      padding: 32px;
-      padding-bottom: 80px;
-    }
-  
-    .main {
-      align-items: center;
-    }
-  
-    .title {
-      font-size: 1rem;
-    }
-  }
-  
+  background: inherit;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  width: 100dvw;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

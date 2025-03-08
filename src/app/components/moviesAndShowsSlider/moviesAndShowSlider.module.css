@@ -1,0 +1,105 @@
+.sliderMainContainer {
+  width: 90%;
+  margin: 9.38rem 5% 0;
+  height: 80dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  border: 1px solid #262626;
+}
+
+.swiper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.875rem;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.textContainer {
+  display: flex;
+  padding: 0rem 9.375rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.title {
+  color: var(--Absolute-White, #fff);
+  text-align: center;
+  font-size: 2.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 3.5625rem */
+  align-self: stretch;
+}
+
+.paragraph {
+  color: var(--Grey-60, #999);
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.6875rem */
+  align-self: stretch;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  box-sizing: border-box;
+}
+
+.playButton {
+  display: flex;
+  padding: 0.875rem 1.5rem;
+  align-items: center;
+  gap: 0.25rem;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  background: var(--Red-45, #e50000);
+  color: var(--Absolute-White, #fff);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 153%; /* 1.72125rem */
+  transition: transform 0.3s ease-in-out;
+}
+
+.playButton:hover {
+  background: var(--Red-30, #ff0000);
+  transform: scale(1.1);
+}
+
+.actionButton {
+  display: flex;
+  padding: 0.875rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-06, #0f0f0f);
+  box-sizing: border-box;
+}
+
+.actionButton:hover {
+  background: var(--Black-12, #1f1f1f);
+}
+

@@ -28,3 +28,27 @@ a {
   text-decoration: none;
 }
 
+/* Categories carousel navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  --swiper-navigation-size: 4rem;
+  --swiper-navigation-sides-offset: 1rem;
+  --swiper-navigation-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  --swiper-navigation-color: #e50000;
+}
+
+.swiper-pagination-bullet {
+  --swiper-pagination-color: #e50000;
+  --swiper-pagination-bullet-inactive-color: var(--Black-20, #333);
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
+  --swiper-pagination-bullet-width: 1.4375rem;
+  --swiper-pagination-bullet-height: 0.25rem;
+  --swiper-pagination-bullet-border-radius: 6.25rem;
+}
