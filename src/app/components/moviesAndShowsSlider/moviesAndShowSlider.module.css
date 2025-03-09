@@ -133,6 +133,25 @@
   background: var(--Black-12, #1f1f1f);
 }
 
+@media (max-width: 1280px) {
+  .infoContainer {
+    padding: 0;
+    height: fit-content;
+    max-height: fit-content;
+    gap: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .textContainer {
+    height: fit-content;
+    max-height: fit-content;
+  }
+}
+
+@media (max-width: 1024px) {
+
+}
+
 @media (max-width: 720px) {
   .sliderMainContainer {
     padding: 1.5rem 1.5rem 1rem 1.5rem;
@@ -148,17 +167,7 @@
     gap: 1.5rem;
   }
 
-  .infoContainer {
-    padding: 0;
-    height: none;
-    max-height: none;
-    gap: 1.25rem;
-    flex-shrink: 0;
-  }
-
   .textContainer {
-    height: none;
-    max-height: none;
     padding: 0;
   }
   .title {
