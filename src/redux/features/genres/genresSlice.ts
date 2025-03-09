@@ -16,7 +16,7 @@ const initialState: GenresState = {
 export const fetchGenres = createAsyncThunk<Genre[]>(
   "fetchGenres",
   async () => {
-    const response = await getApiGenres();    
+    const response = await getApiGenres();
     return response;
   }
 );

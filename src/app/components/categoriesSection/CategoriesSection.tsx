@@ -10,11 +10,10 @@ import "swiper/css/pagination";
 import Link from "next/link";
 import { Genre } from "@streambive/app/api/models/genre.model";
 
-export default function CategoriesSection({
-  categories
-}: {
+interface CategoryProps {
   categories: Genre[];
-}) {
+}
+export default function CategoriesSection({ categories }: CategoryProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

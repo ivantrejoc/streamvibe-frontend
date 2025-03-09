@@ -2,18 +2,18 @@ import axios from "axios";
 const URL = process.env.NEXT_PUBLIC_API_URL;
 const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
-export const getApiGenres = async () => {
+export const getApiTrending = async () => {
   try {
-    const apiGenres = await axios.get(`${URL}/genre/movie/list`, {
+    const apiTrending = await axios.get(`${URL}/trending/all/week`, {
       headers: {
         Authorization: `Bearer ${API_TOKEN}`,
-             },
+      },
     });
-    if (apiGenres.status !== 200) {
-      throw new Error(apiGenres.statusText);
+    if (apiTrending.status !== 200) {
+      throw new Error(apiTrending.statusText);
     }
-    const genres = apiGenres.data.genres;
-    return genres;
+    const trendingMovies = apiTrending.data.results;
+    return trendingMovies;
   } catch (error) {
     console.error(error);
     if (axios.isAxiosError(error)) {
