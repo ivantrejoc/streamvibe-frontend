@@ -4,6 +4,7 @@ import { fetchTrending } from "@streambive/redux/features/trending/trendingSlice
 import { useAppDispatch, useAppSelector } from "@streambive/redux/store";
 import MoviesAndShowsSlider from "../components/moviesAndShowsSlider/MoviesAndShowsSlider";
 import styles from "./moviesAndShows.module.css";
+import { MoviesSection } from "../components/moviesSection";
 
 export default function MoviesAndShows() {
   const dispatch = useAppDispatch();
@@ -14,11 +15,16 @@ export default function MoviesAndShows() {
   }, [dispatch]);
 
   const firstTenTrending = trending?.slice(0, 10);
-  console.log("FIRST TEN TRENDING: ", firstTenTrending);
+
+  const trendingMovies = trending?.filter(
+    (trending) => trending.media_type === "movie"
+  );
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <MoviesAndShowsSlider trendings ={firstTenTrending} />
+        <MoviesAndShowsSlider trendings={firstTenTrending} />
+        <MoviesSection trendingMovies={trendingMovies} />
       </main>
     </div>
   );

@@ -122,7 +122,7 @@ export default function Footer() {
             </div>
           </div>
           <div className={styles.bottomContainer}>
-            <p className={styles.copyright}>@2025 streamvib, All Rights Reserved</p>
+            <p className={styles.copyright}>@2025 streamvib, All Rights Reserved. Developed by Iván Trejo - Sevilla, Spain.</p>
             <div className={styles.bottomLinksContainer}>
               <Link href={"/"} className={styles.bottomLink}>
                 Terms of Use
@@ -243,7 +243,7 @@ export default function Footer() {
             </div>
           </div>
           <div className={styles.bottomContainer}>
-            <p>@2025 streamvib, All Rights Reserved</p>
+            <p>@2025 streamvib, All Rights Reserved. Developed by Iván Trejo - Sevilla, Spain.</p>
             <div className={styles.bottomLinksContainer}>
               <Link href={"/"} className={styles.bottomLink}>
                 Terms of Use

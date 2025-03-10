@@ -21,8 +21,7 @@ export default function MoviesAndShowsSlider({ trendings }: TrendingProps) {
       setIsLoading(false);
     }
   }, [trendings]);
-  console.log("TRENDINGS: ", trendings);
-
+ 
   const imageBaseUrl = process.env.NEXT_PUBLIC_IMAGES_API_URL;
 
   if (isLoading) {
@@ -41,7 +40,7 @@ export default function MoviesAndShowsSlider({ trendings }: TrendingProps) {
         className={styles.swiper}
       >
         {trendings?.map((trending) => {
-          const backgroundImage = `${imageBaseUrl}${trending.backdrop_path}`;
+          const backgroundImage = `${imageBaseUrl}w1280${trending.backdrop_path}`;
           return (
             <SwiperSlide
               key={trending.id}
