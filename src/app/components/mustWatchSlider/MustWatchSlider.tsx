@@ -1,21 +1,24 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard } from "swiper/modules";
+import { Rating } from "react-simple-star-rating";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
 
-import styles from "./sectionSlider.module.css";
+import styles from "./mustWatchSlider.module.css";
 import { SectionData } from "../moviesSection/MoviesSection";
 
-export default function SectionSlider({ title, movies }: SectionData) {
+export default function MustWatchSlider({ title, movies }: SectionData) {
   const imageBaseUrl = process.env.NEXT_PUBLIC_IMAGES_API_URL;
+  const average = 5.55;
+  const rating = (average / 10) * 5;
 
   return (
     <div className={styles.sliderMainContainer}>
       <div className={styles.textContainer}>
-        <h3 className={styles.sliderTitle}>{title}</h3>
+        <h3 className={styles.sliderTitle}>Must - Watch Movies</h3>
       </div>
       <Swiper
         slidesPerView={1}
@@ -72,13 +75,14 @@ export default function SectionSlider({ title, movies }: SectionData) {
                   <p className={styles.details}>1h30min</p>
                 </div>
                 <div className={styles.watchersContainer}>
-                  <div className={styles.iconContainer}>
-                    <Image
-                      width={25}
-                      height={25}
-                      loading="lazy"
-                      src={"/social-media-icons/eye.png"}
-                      alt="eye-icon"
+                  <div className={styles.ratingContainer}>
+                    <Rating
+                      initialValue={rating}
+                      readonly={true}
+                      allowFraction={true}
+                      size={20}
+                      className={styles.starRating}
+                      fillColor="var(--Red-45, #e50000)"
                     />
                   </div>
                   <p className={styles.details}>2K</p>

@@ -2,12 +2,14 @@ import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import genresReducer from "./features/genres/genresSlice";
 import trendingReducer from "./features/trending/trendingSlice";
+import moviesReleaseReducer from "./features/moviesRelease/moviesReleaseSlice";
 
 export const store = () => {
   return configureStore({
     reducer: {
       genres: genresReducer,
       trending: trendingReducer,
+      moviesRelease: moviesReleaseReducer,
     },
   });
 };

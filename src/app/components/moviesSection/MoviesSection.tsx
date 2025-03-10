@@ -1,12 +1,17 @@
 import Movie from "@streambive/app/api/models/movie.model";
 import SectionSlider from "../sectionSlider/SectionSlider";
 import styles from "./moviesSection.module.css";
+import { MustWatchSlider } from "../mustWatchSlider";
 
 export interface MoviesSectionProps {
-    trendingMovies: Movie[]
+  data: SectionData[];
 }
-export default function MoviesSection({trendingMovies}: MoviesSectionProps) {
-        
+
+export type SectionData = {
+  title: string;
+  movies: Movie[];
+};
+export default function MoviesSection({ data }: MoviesSectionProps) {
   return (
     <div className={styles.moviesSectionMainContainer}>
       <div className={styles.moviesHeadingContainer}>
@@ -15,7 +20,14 @@ export default function MoviesSection({trendingMovies}: MoviesSectionProps) {
         </div>
       </div>
       <div className={styles.moviesSwipersContainer}>
-        <SectionSlider trendingMovies={trendingMovies} />
+        {data?.map((section, index) => (
+          <SectionSlider
+            key={index}
+            title={section.title}
+            movies={section.movies}
+          />
+        ))}
+        <MustWatchSlider title={data[0].title} movies={data[0].movies} />
       </div>
     </div>
   );
