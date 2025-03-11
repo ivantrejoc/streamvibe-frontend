@@ -10,7 +10,7 @@ import Link from "next/link";
 import styles from "./mustWatchSlider.module.css";
 import { SectionData } from "../moviesSection/MoviesSection";
 
-export default function MustWatchSlider({ title, movies }: SectionData) {
+export default function MustWatchSlider({ title, moviesOrShows }: SectionData) {
   const imageBaseUrl = process.env.NEXT_PUBLIC_IMAGES_API_URL;
 
   return (
@@ -48,13 +48,13 @@ export default function MustWatchSlider({ title, movies }: SectionData) {
           }
         }}
       >
-        {movies?.map((movie) => (
-          <SwiperSlide key={movie.id} className={styles.slide}>
+        {moviesOrShows?.map((movieOrShow) => (
+          <SwiperSlide key={movieOrShow.id} className={styles.slide}>
             <Link href="/" className={styles.movieOrShowCard}>
               <div className={styles.imageContainer}>
                 <Image
                   fill
-                  src={`${imageBaseUrl}w500${movie?.poster_path}`}
+                  src={`${imageBaseUrl}w500${movieOrShow?.poster_path}`}
                   alt="action-movie"
                   loading="lazy"
                 />
@@ -75,7 +75,7 @@ export default function MustWatchSlider({ title, movies }: SectionData) {
                 <div className={styles.watchersContainer}>
                   <div className={styles.ratingContainer}>
                     <Rating
-                      initialValue={(movie.vote_average / 10) * 5}
+                      initialValue={(movieOrShow.vote_average / 10) * 5}
                       readonly={true}
                       allowFraction={true}
                       size={20}
@@ -83,7 +83,7 @@ export default function MustWatchSlider({ title, movies }: SectionData) {
                       fillColor="var(--Red-45, #e50000)"
                     />
                   </div>
-                  <p className={styles.details}>{movie.vote_count.toString().slice(0,2)}k</p>
+                  <p className={styles.details}>{movieOrShow.vote_count.toString().slice(0,2)}k</p>
                 </div>
               </div>
             </Link>

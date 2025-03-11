@@ -9,7 +9,7 @@ import Link from "next/link";
 import styles from "./sectionSlider.module.css";
 import { SectionData } from "../moviesSection/MoviesSection";
 
-export default function SectionSlider({ title, movies }: SectionData) {
+export default function SectionSlider({ title, moviesOrShows }: SectionData) {
   const imageBaseUrl = process.env.NEXT_PUBLIC_IMAGES_API_URL;
 
   return (
@@ -47,13 +47,13 @@ export default function SectionSlider({ title, movies }: SectionData) {
           }
         }}
       >
-        {movies?.map((movie) => (
-          <SwiperSlide key={movie.id} className={styles.slide}>
+        {moviesOrShows?.map((movieOrShow) => (
+          <SwiperSlide key={movieOrShow.id} className={styles.slide}>
             <Link href="/" className={styles.movieOrShowCard}>
               <div className={styles.imageContainer}>
                 <Image
                   fill
-                  src={`${imageBaseUrl}w500${movie?.poster_path}`}
+                  src={`${imageBaseUrl}w500${movieOrShow?.poster_path}`}
                   alt="action-movie"
                   loading="lazy"
                 />
@@ -81,7 +81,9 @@ export default function SectionSlider({ title, movies }: SectionData) {
                       alt="eye-icon"
                     />
                   </div>
-                  <p className={styles.details}>{movie?.popularity.toString().slice(0,2)}K</p>
+                  <p className={styles.details}>
+                    {movieOrShow?.popularity.toString().slice(0, 2)}K
+                  </p>
                 </div>
               </div>
             </Link>

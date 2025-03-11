@@ -2,8 +2,10 @@ import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import genresReducer from "./features/genres/genresSlice";
 import trendingReducer from "./features/trending/trendingSlice";
-import moviesReleaseReducer from "./features/moviesRelease/moviesReleaseSlice";
-import topRatedMoviesReducer from "./features/topRatedMovies/topRatedMoviesSlice";
+import moviesReleaseReducer from "./features/movies/moviesRelease/moviesReleaseSlice";
+import topRatedMoviesReducer from "./features/movies/topRatedMovies/topRatedMoviesSlice";
+import tvShowsReleaseReducer from "./features/tvShows/tvShowsReleases/tvShowsReleaseSlice";
+import topRatedShowsReducer from "./features/tvShows/topRatedShows/topRatedShowsSlice";
 
 export const store = () => {
   return configureStore({
@@ -12,6 +14,8 @@ export const store = () => {
       trending: trendingReducer,
       moviesRelease: moviesReleaseReducer,
       topRatedMovies: topRatedMoviesReducer,
+      tvShowsReleases: tvShowsReleaseReducer,
+      topRatedShows: topRatedShowsReducer
     },
   });
 };

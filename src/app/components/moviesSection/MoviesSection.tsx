@@ -1,26 +1,29 @@
-import Movie from "@streambive/app/api/models/movie.model";
+import Movie from "@streambive/app/api/models/movieOrShow.model";
 import SectionSlider from "../sectionSlider/SectionSlider";
 import styles from "./moviesSection.module.css";
 import { MustWatchSlider } from "../mustWatchSlider";
 
 export interface MoviesSectionProps {
+  sectionTitle: string;
   trendingAndReleases: SectionData[];
   topRated: SectionData;
 }
 
 export type SectionData = {
   title: string;
-  movies: Movie[];
+  moviesOrShows: Movie[];
 };
-export default function MoviesSection({
+export default function MoviesSection({ sectionTitle,
   trendingAndReleases,
   topRated
 }: MoviesSectionProps) {
+
+
   return (
     <div className={styles.moviesSectionMainContainer}>
       <div className={styles.moviesHeadingContainer}>
         <div className={styles.headingContainer}>
-          <h2 className={styles.heading}>Movies</h2>
+          <h2 className={styles.heading}>{sectionTitle}</h2>
         </div>
       </div>
       <div className={styles.moviesSwipersContainer}>
@@ -28,10 +31,10 @@ export default function MoviesSection({
           <SectionSlider
             key={index}
             title={section.title}
-            movies={section.movies}
+            moviesOrShows={section.moviesOrShows}
           />
         ))}
-        <MustWatchSlider title={topRated.title} movies={topRated.movies} />
+        <MustWatchSlider title={topRated.title} moviesOrShows={topRated.moviesOrShows} />
       </div>
     </div>
   );

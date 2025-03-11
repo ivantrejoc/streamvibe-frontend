@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getMoviesNewReleases } from "@streambive/app/api/services/movies.service/movies.services";
-import Movie from "@streambive/app/api/models/movie.model";
+import MovieOrShow from "@streambive/app/api/models/movieOrShow.model";
 
 export interface MoviesReleaseState {
-  releases: Movie[];
+  releases: MovieOrShow[];
   loading: boolean;
   error: string | null;
 }
@@ -14,7 +14,7 @@ const initialState: MoviesReleaseState = {
   error: null,
 };
 
-export const fetchMoviesReleases = createAsyncThunk<Movie[]>(
+export const fetchMoviesReleases = createAsyncThunk<MovieOrShow[]>(
   "fetchMoviesReleases",
   async () => {
     const response = await getMoviesNewReleases();

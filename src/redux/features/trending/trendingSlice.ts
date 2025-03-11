@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import Movie from "@streambive/app/api/models/movie.model";
+import Movie from "@streambive/app/api/models/movieOrShow.model";
 import { getApiTrending } from "@streambive/app/api/services/trending.services/trending.services";
 
 export interface TrendingState {

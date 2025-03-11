@@ -7,7 +7,7 @@ import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper/modules";
 import styles from "./moviesAndShowSlider.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import Movie from "@streambive/app/api/models/movie.model";
+import Movie from "@streambive/app/api/models/movieOrShow.model";
 import { useEffect, useState } from "react";
 
 interface TrendingProps {
