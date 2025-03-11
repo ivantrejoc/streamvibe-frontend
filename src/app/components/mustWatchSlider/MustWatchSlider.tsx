@@ -16,7 +16,7 @@ export default function MustWatchSlider({ title, movies }: SectionData) {
   return (
     <div className={styles.sliderMainContainer}>
       <div className={styles.textContainer}>
-        <h3 className={styles.sliderTitle}>Must - Watch Movies</h3>
+        <h3 className={styles.sliderTitle}>{title}</h3>
       </div>
       <Swiper
         slidesPerView={1}
@@ -40,7 +40,7 @@ export default function MustWatchSlider({ title, movies }: SectionData) {
           },
           1280: {
             slidesPerView: 3,
-            spaceBetween: 120
+            spaceBetween: 100
           },
           1440: {
             slidesPerView: 4,
@@ -83,7 +83,7 @@ export default function MustWatchSlider({ title, movies }: SectionData) {
                       fillColor="var(--Red-45, #e50000)"
                     />
                   </div>
-                  <p className={styles.details}>2K</p>
+                  <p className={styles.details}>{movie.vote_count.toString().slice(0,2)}k</p>
                 </div>
               </div>
             </Link>

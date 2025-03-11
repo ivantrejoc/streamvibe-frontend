@@ -4,14 +4,18 @@ import styles from "./moviesSection.module.css";
 import { MustWatchSlider } from "../mustWatchSlider";
 
 export interface MoviesSectionProps {
-  data: SectionData[];
+  trendingAndReleases: SectionData[];
+  topRated: SectionData;
 }
 
 export type SectionData = {
   title: string;
   movies: Movie[];
 };
-export default function MoviesSection({ data }: MoviesSectionProps) {
+export default function MoviesSection({
+  trendingAndReleases,
+  topRated
+}: MoviesSectionProps) {
   return (
     <div className={styles.moviesSectionMainContainer}>
       <div className={styles.moviesHeadingContainer}>
@@ -20,14 +24,14 @@ export default function MoviesSection({ data }: MoviesSectionProps) {
         </div>
       </div>
       <div className={styles.moviesSwipersContainer}>
-        {data?.map((section, index) => (
+        {trendingAndReleases?.map((section, index) => (
           <SectionSlider
             key={index}
             title={section.title}
             movies={section.movies}
           />
         ))}
-        <MustWatchSlider title={data[0].title} movies={data[0].movies} />
+        <MustWatchSlider title={topRated.title} movies={topRated.movies} />
       </div>
     </div>
   );

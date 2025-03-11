@@ -31,7 +31,7 @@ export const getMoviesNewReleases = async () => {
 
 export const getTopRatedMovies = async () => {
   try {
-    const apiTopRatedMovies = await axios.get(`${URL}/movie/now_playing?`, {
+    const apiTopRatedMovies = await axios.get(`${URL}/movie/top_rated?`, {
       headers: {
         Authorization: `Bearer ${API_TOKEN}`,
       },

@@ -81,7 +81,7 @@ export default function SectionSlider({ title, movies }: SectionData) {
                       alt="eye-icon"
                     />
                   </div>
-                  <p className={styles.details}>2K</p>
+                  <p className={styles.details}>{movie?.popularity.toString().slice(0,2)}K</p>
                 </div>
               </div>
             </Link>
