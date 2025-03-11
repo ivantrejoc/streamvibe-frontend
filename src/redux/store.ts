@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import genresReducer from "./features/genres/genresSlice";
 import trendingReducer from "./features/trending/trendingSlice";
 import moviesReleaseReducer from "./features/moviesRelease/moviesReleaseSlice";
+import topRatedMoviesReducer from "./features/topRatedMovies/topRatedMoviesSlice";
 
 export const store = () => {
   return configureStore({
@@ -10,6 +11,7 @@ export const store = () => {
       genres: genresReducer,
       trending: trendingReducer,
       moviesRelease: moviesReleaseReducer,
+      topRatedMovies: topRatedMoviesReducer,
     },
   });
 };

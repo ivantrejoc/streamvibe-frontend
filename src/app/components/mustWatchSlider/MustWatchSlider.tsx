@@ -12,8 +12,6 @@ import { SectionData } from "../moviesSection/MoviesSection";
 
 export default function MustWatchSlider({ title, movies }: SectionData) {
   const imageBaseUrl = process.env.NEXT_PUBLIC_IMAGES_API_URL;
-  const average = 5.55;
-  const rating = (average / 10) * 5;
 
   return (
     <div className={styles.sliderMainContainer}>
@@ -77,7 +75,7 @@ export default function MustWatchSlider({ title, movies }: SectionData) {
                 <div className={styles.watchersContainer}>
                   <div className={styles.ratingContainer}>
                     <Rating
-                      initialValue={rating}
+                      initialValue={(movie.vote_average / 10) * 5}
                       readonly={true}
                       allowFraction={true}
                       size={20}

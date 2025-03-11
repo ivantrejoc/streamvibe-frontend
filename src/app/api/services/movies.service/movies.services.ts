@@ -28,3 +28,30 @@ export const getMoviesNewReleases = async () => {
     };
   }
 };
+
+export const getTopRatedMovies = async () => {
+  try {
+    const apiTopRatedMovies = await axios.get(`${URL}/movie/now_playing?`, {
+      headers: {
+        Authorization: `Bearer ${API_TOKEN}`,
+      },
+    });
+    if (apiTopRatedMovies.status !== 200) {
+      throw new Error(apiTopRatedMovies.statusText);
+    }
+    const topRatedMovies = apiTopRatedMovies.data.results;
+    return topRatedMovies;
+  } catch (error) {
+    console.error(error);
+    if (axios.isAxiosError(error)) {
+      return {
+        status: error.response?.status || 500,
+        message: error.response?.data?.message || "Internal Server Error",
+      };
+    }
+    return {
+      status: 500,
+      message: "Unexpected error",
+    };
+  }
+};
