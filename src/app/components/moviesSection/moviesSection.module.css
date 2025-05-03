@@ -68,6 +68,7 @@
     margin-top: 5rem;
   }
   .moviesSwipersContainer {
+    gap: 1.75rem;
     padding: 0;
   }
 

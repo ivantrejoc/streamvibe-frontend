@@ -4,7 +4,7 @@ import { fetchGenres } from "@streambive/redux/features/genres/genresSlice";
 import { useAppDispatch, useAppSelector } from "@streambive/redux/store";
 import { HomeHero } from "./components/homeHero";
 import { CategoriesSection } from "./components/categoriesSection";
-import styles from "./home.module.css";
+import styles from "../styles/views.module.css";
 import { DevicesSection } from "./components/devicesSection";
 import FaqSection from "./components/faqSection/FaqSection";
 import { PricingSection } from "./components/pricingSection";

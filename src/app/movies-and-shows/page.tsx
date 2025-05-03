@@ -1,9 +1,9 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { fetchTrending } from "@streambive/redux/features/trending/trendingSlice";
 import { useAppDispatch, useAppSelector } from "@streambive/redux/store";
 import MoviesAndShowsSlider from "../components/moviesAndShowsSlider/MoviesAndShowsSlider";
-import styles from "./moviesAndShows.module.css";
+import styles from "../../styles/views.module.css";
 import { MoviesSection } from "../components/moviesSection";
 import { fetchMoviesReleases } from "@streambive/redux/features/movies/moviesRelease/moviesReleaseSlice";
 import { FreeTrialHero } from "../components/freeTrialHero";
@@ -35,17 +35,33 @@ export default function MoviesAndShows() {
   }, [dispatch]);
 
   const firstTenTrending = trending?.slice(0, 10);
+  const memoTenTrending = useMemo(() => firstTenTrending, [firstTenTrending]);
 
   const trendingMovies = trending?.filter(
     (trending) => trending.media_type === "movie"
   );
+  const memoTrendingMovies = useMemo(() => trendingMovies, [trendingMovies]);
 
   const trendingShows = trending?.filter(
     (trending) => trending.media_type === "tv"
   );
+  const memoTrendingShows = useMemo(() => trendingShows, [trendingShows]);
 
   const filteredShowsReleases = tvShowsReleases?.filter(
     (tvShow) => tvShow.poster_path !== null
+  );
+  const memoShowsReleases = useMemo(
+    () => filteredShowsReleases,
+    [filteredShowsReleases]
+  );
+
+  const filteredTopRatedShows = topRatedShows?.filter(
+    (tvShow) => tvShow.poster_path !== null
+  );
+
+  const memoTopRatedShows = useMemo(
+    () => filteredTopRatedShows,
+    [filteredTopRatedShows]
   );
 
   const moviesSectionData = {
@@ -53,7 +69,7 @@ export default function MoviesAndShows() {
     trendingAndReleases: [
       {
         title: "Trending Now",
-        moviesOrShows: trendingMovies
+        moviesOrShows: memoTrendingMovies
       },
       {
         title: "New Releases",
@@ -71,23 +87,23 @@ export default function MoviesAndShows() {
     trendingAndReleases: [
       {
         title: "Trending Now",
-        moviesOrShows: trendingShows
+        moviesOrShows: memoTrendingShows
       },
       {
         title: "New Releases",
-        moviesOrShows: filteredShowsReleases
+        moviesOrShows: memoShowsReleases
       }
     ],
     topRated: {
       title: "Must - Watch TV Shows",
-      moviesOrShows: topRatedShows
+      moviesOrShows: memoTopRatedShows
     }
   };
 
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <MoviesAndShowsSlider trendings={firstTenTrending} />
+        <MoviesAndShowsSlider trendings={memoTenTrending} />
         <MoviesSection
           sectionTitle={moviesSectionData.sectionTitle}
           trendingAndReleases={moviesSectionData.trendingAndReleases}

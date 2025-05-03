@@ -55,3 +55,33 @@ export const getTopRatedMovies = async () => {
     };
   }
 };
+
+export const getMovieById = async (id: string) => {
+  try {
+    const movieById = await axios.get(
+      `${URL}/movie/${id}?append_to_response=credits,videos,images`,
+      {
+        headers: {
+          Authorization: `Bearer ${API_TOKEN}`,
+        },
+      }
+    );
+    if (movieById.status !== 200) {
+      throw new Error(movieById.statusText);
+    }
+    const movie = movieById.data;
+    return movie;
+  } catch (error) {
+    console.error(error);
+    if (axios.isAxiosError(error)) {
+      return {
+        status: error.response?.status || 500,
+        message: error.response?.data?.message || "Internal Server Error",
+      };
+    }
+    return {
+      status: 500,
+      message: "Unexpected error",
+    };
+  }
+};

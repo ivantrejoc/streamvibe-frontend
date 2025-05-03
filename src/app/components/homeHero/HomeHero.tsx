@@ -2,11 +2,12 @@
 import { useIsMobile } from "@streambive/hooks";
 import Image from "next/image";
 import styles from "./homeHero.module.css";
+import Link from "next/link";
 export default function HomeHero() {
   const isMobile = useIsMobile();
 
   return (
-    <div className={styles.heroContainer}>
+    <section className={styles.heroContainer}>
       <div className={styles.heroSubcontainer}>
         <div className={styles.imageContainer}>
           <Image
@@ -70,7 +71,7 @@ export default function HomeHero() {
             </p>
           )}
         </div>
-        <button className={styles.heroButton}>
+        <Link href={"/subscriptions"} className={styles.heroButton}>
           <Image
             width={28}
             height={28}
@@ -79,8 +80,8 @@ export default function HomeHero() {
             alt={"play-icon"}
           />
           <p className={styles.textButton}>Start Watching Now</p>
-        </button>
+        </Link>
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,4 +1,4 @@
-import styles from "./home.module.css"
+import styles from "../styles/views.module.css";
 
 export default function NotFound() {
   return (
@@ -7,5 +7,5 @@ export default function NotFound() {
         <h1 className={styles.title}>OOOOPS NOT FOUND:::</h1>
       </main>
     </div>
-  )
+  );
 }

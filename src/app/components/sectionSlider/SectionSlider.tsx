@@ -49,7 +49,14 @@ export default function SectionSlider({ title, moviesOrShows }: SectionData) {
       >
         {moviesOrShows?.map((movieOrShow) => (
           <SwiperSlide key={movieOrShow.id} className={styles.slide}>
-            <Link href="/" className={styles.movieOrShowCard}>
+            <Link
+              href={
+                movieOrShow.media_type !== "tv"
+                  ? `/movie/${movieOrShow.id}`
+                  : `/tv-show/${movieOrShow.id}`
+              }
+              className={styles.movieOrShowCard}
+            >
               <div className={styles.imageContainer}>
                 <Image
                   fill

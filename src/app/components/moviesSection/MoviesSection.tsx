@@ -20,7 +20,7 @@ export default function MoviesSection({ sectionTitle,
 
 
   return (
-    <div className={styles.moviesSectionMainContainer}>
+    <section className={styles.moviesSectionMainContainer}>
       <div className={styles.moviesHeadingContainer}>
         <div className={styles.headingContainer}>
           <h2 className={styles.heading}>{sectionTitle}</h2>
@@ -36,6 +36,6 @@ export default function MoviesSection({ sectionTitle,
         ))}
         <MustWatchSlider title={topRated.title} moviesOrShows={topRated.moviesOrShows} />
       </div>
-    </div>
+    </section>
   );
 }

@@ -37,7 +37,7 @@ export default function PricingSection() {
   ];
 
   return (
-    <div id="pricing" className={styles.pricingMainContainer}>
+    <section id="pricing" className={styles.pricingMainContainer}>
       <div className={styles.headingContainer}>
         <div className={styles.textContainer}>
           <h2 className={styles.title}>
@@ -76,6 +76,6 @@ export default function PricingSection() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

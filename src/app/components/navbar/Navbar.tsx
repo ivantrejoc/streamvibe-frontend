@@ -16,7 +16,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className={styles.mainContainer}>
+    <nav className={styles.mainContainer}>
       <Link href="/">
         <div className={styles.logoContainer}>
           <Image
@@ -62,6 +62,6 @@ export default function Navbar() {
       ) : (
         <DropdownMenu />
       )}
-    </div>
+    </nav>
   );
 }

@@ -21,7 +21,6 @@ export default function MoviesAndShowsSlider({ trendings }: TrendingProps) {
       setIsLoading(false);
     }
   }, [trendings]);
- 
   const imageBaseUrl = process.env.NEXT_PUBLIC_IMAGES_API_URL;
 
   if (isLoading) {
@@ -29,7 +28,7 @@ export default function MoviesAndShowsSlider({ trendings }: TrendingProps) {
   }
 
   return (
-    <div className={styles.sliderMainContainer}>
+    <section className={styles.sliderMainContainer}>
       <Swiper
         cssMode={true}
         navigation={true}
@@ -41,9 +40,10 @@ export default function MoviesAndShowsSlider({ trendings }: TrendingProps) {
       >
         {trendings?.map((trending) => {
           const backgroundImage = `${imageBaseUrl}w1280${trending.backdrop_path}`;
+          const trendingStringId = trending.id.toString();
           return (
             <SwiperSlide
-              key={trending.id}
+              key={trendingStringId}
               className={styles.swiperSlide}
               style={{ backgroundImage: `url(${backgroundImage})` }}
             >
@@ -55,62 +55,62 @@ export default function MoviesAndShowsSlider({ trendings }: TrendingProps) {
                   <p className={styles.paragraph}>{trending.overview}</p>
                 </div>
                 <div className={styles.buttonsContainer}>
-                  <Link href={"/"} passHref legacyBehavior>
-                    <a
-                      className={styles.playButton}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                  <Link
+                    href={
+                      trending.media_type !== "tv"
+                        ? `/movie/${trendingStringId}`
+                        : `/tv-show/${trendingStringId}`
+                    }
+                    className={styles.playButton}
+                  >
+                    <Image
+                      src={"/social-media-icons/play.png"}
+                      width={28}
+                      height={28}
+                      sizes="(max-width: 720px) 1.5rem, 1.5rem"
+                      alt="play-icon"
+                      loading="lazy"
+                    />
+                    Play Now
+                  </Link>
+                  <div className={styles.actionButtonsContainer}>
+                    <button className={styles.actionButton}>
                       <Image
-                        src={"/social-media-icons/play.png"}
+                        src={"/plus.png"}
                         width={28}
                         height={28}
                         sizes="(max-width: 720px) 1.5rem, 1.5rem"
-                        alt="play-icon"
+                        alt="plus-icon"
                         loading="lazy"
                       />
-                      Play Now
-                    </a>
-                  </Link>
-                  <div className={styles.actionButtonsContainer}>
-                  <button className={styles.actionButton}>
-                    <Image
-                      src={"/plus.png"}
-                      width={28}
-                      height={28}
-                       sizes="(max-width: 720px) 1.5rem, 1.5rem"
-                      alt="plus-icon"
-                      loading="lazy"
-                    />
-                  </button>
-                  <button className={styles.actionButton}>
-                    <Image
-                      src={"/social-media-icons/hand-thumb-up.png"}
-                      width={28}
-                      height={28}
-                       sizes="(max-width: 720px) 1.5rem, 1.5rem"
-                      alt="hand-up-icon"
-                      loading="lazy"
-                    />
-                  </button>
-                  <button className={styles.actionButton}>
-                    <Image
-                      src={"/social-media-icons/speaker-wave.png"}
-                      width={28}
-                      height={28}
-                       sizes="(max-width: 720px) 1.5rem, 1.5rem"
-                      alt="speaker-wave-icon"
-                      loading="lazy"
-                    />
-                  </button>
+                    </button>
+                    <button className={styles.actionButton}>
+                      <Image
+                        src={"/social-media-icons/hand-thumb-up.png"}
+                        width={28}
+                        height={28}
+                        sizes="(max-width: 720px) 1.5rem, 1.5rem"
+                        alt="hand-up-icon"
+                        loading="lazy"
+                      />
+                    </button>
+                    <button className={styles.actionButton}>
+                      <Image
+                        src={"/social-media-icons/speaker-wave.png"}
+                        width={28}
+                        height={28}
+                        sizes="(max-width: 720px) 1.5rem, 1.5rem"
+                        alt="speaker-wave-icon"
+                        loading="lazy"
+                      />
+                    </button>
                   </div>
-                 
                 </div>
               </div>
             </SwiperSlide>
           );
         })}
       </Swiper>
-    </div>
+    </section>
   );
 }

@@ -6,6 +6,7 @@ import moviesReleaseReducer from "./features/movies/moviesRelease/moviesReleaseS
 import topRatedMoviesReducer from "./features/movies/topRatedMovies/topRatedMoviesSlice";
 import tvShowsReleaseReducer from "./features/tvShows/tvShowsReleases/tvShowsReleaseSlice";
 import topRatedShowsReducer from "./features/tvShows/topRatedShows/topRatedShowsSlice";
+import movieByIdReducer from "./features/movies/movieById/movieByIdSlice";
 
 export const store = () => {
   return configureStore({
@@ -15,7 +16,8 @@ export const store = () => {
       moviesRelease: moviesReleaseReducer,
       topRatedMovies: topRatedMoviesReducer,
       tvShowsReleases: tvShowsReleaseReducer,
-      topRatedShows: topRatedShowsReducer
+      topRatedShows: topRatedShowsReducer,
+      movieById: movieByIdReducer
     },
   });
 };

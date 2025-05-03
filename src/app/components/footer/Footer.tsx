@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <>
       {isMobile ? (
-        <div className={styles.footerMobileContainer}>
+        <footer className={styles.footerMobileContainer}>
           <div className={styles.mobileInner}>
             <div className={styles.categoriesContainer}>
               <div className={styles.mobileLinksContainer}>
@@ -135,9 +135,9 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-        </div>
+        </footer>
       ) : (
-        <div className={styles.footerMainContainer}>
+        <footer className={styles.footerMainContainer}>
           <div className={styles.footerLinksContainer}>
             <div className={styles.footerSection}>
               <h5 className={styles.linksHeading}>Home</h5>
@@ -256,7 +256,7 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-        </div>
+        </footer>
       )}
     </>
   );

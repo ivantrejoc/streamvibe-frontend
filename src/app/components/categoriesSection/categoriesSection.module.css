@@ -171,8 +171,8 @@
     font-size: 0.875rem;
   }
 
-  :global(.swiper-button-prev),
-  :global(.swiper-button-next) {
+  .categories .swiper-button-prev,
+  .categories .swiper-button-next {
     --swiper-navigation-size: 3rem;
     --swiper-navigation-sides-offset: 0.5rem;
   }

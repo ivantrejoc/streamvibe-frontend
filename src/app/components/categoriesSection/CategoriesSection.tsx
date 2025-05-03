@@ -26,7 +26,7 @@ export default function CategoriesSection({ categories }: CategoryProps) {
     return <div>Loading...</div>;
   }
   return (
-    <div id="categories" className={styles.categoriesMainContainer}>
+    <section id="categories" className={styles.categoriesMainContainer}>
       <div className={styles.textContainer}>
         <h2 className={styles.categoriesTitle}>
           Explore our wide variety of categories
@@ -120,6 +120,6 @@ export default function CategoriesSection({ categories }: CategoryProps) {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 }

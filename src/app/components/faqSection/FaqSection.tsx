@@ -52,7 +52,7 @@ export default function FaqSection() {
   ];
 
   return (
-    <div id="faq" className={styles.faqSectionContainer}>
+    <section id="faq" className={styles.faqSectionContainer}>
       <div className={styles.headingContainer}>
         <div className={styles.textContainer}>
           <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
@@ -71,6 +71,6 @@ export default function FaqSection() {
         ))}
    
       </div>
-    </div>
+    </section>
   );
 }
