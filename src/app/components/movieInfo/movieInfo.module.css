@@ -1,341 +1,347 @@
-
 .detailsContainer {
-    margin-top: 6.5rem;
-    width: 90%;
-    max-width: 90%;
-    display: flex;
-    gap: 1.25rem;
-    overflow: hidden;
-  }
-  
-  .detailsContainer .leftSide {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1.25rem;
-    flex: 1 0 0;
-    max-width: 69%;
-  }
-  
-  .leftSide .descSection,
-  .leftSide .castSection,
-  .leftSide .reviewsSection {
-    display: flex;
-    padding: 2.5rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.625rem;
-    align-self: stretch;
-    border-radius: 0.625rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-10, #1a1a1a);
-  }
-  
-  .heading {
-    align-self: stretch;
-    color: var(--Grey-60, #999);
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%; /* 1.5rem */
-  }
-  
-  .leftSide .textDesc {
-    align-self: stretch;
-    color: var(--Absolute-White, #fff);
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%; /* 1.5rem */
-  }
-  
-  .castSection .avatarsContainer {
-    height: auto;
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    align-self: stretch;
-  }
-  
-  .avatarsContainer .avatarContainer {
-    height: 6.8125rem;
-    width: 6.8125rem;
-    flex: 1 0 0;
-    border-radius: 0.625rem;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .avatarsContainer .avatarContainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    display: block;
-  }
-  
-  .avatarsContainer .avatarContainer::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(211, 211, 211, 0.1);
-    border-radius: 0.625rem;
-  }
-  
-  .reviewsSection {
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .reviewsSection .topContainer {
-    display: flex;
-    align-items: center;
-    gap: 0.875rem;
-    align-self: stretch;
-  }
-  
-  .reviewsSection .headingContainer {
-    flex: 1 0 0;
-  }
-  
-  .reviewsSection .actionButton {
-    display: flex;
-    padding: 0.875rem 1rem;
-    align-items: center;
-    gap: 0.25rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-08, #141414);
-    color: var(--Absolute-White, #fff);
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 153%; /* 1.72125rem */
-  }
-  
-  .reviewsSection .carouselContainer {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 4.5rem 0 4.5rem !important;
-    box-sizing: border-box;
-    max-width: 80rem;
-    overflow: hidden;
-  }
-  
-  .carouselContainer .reviewCard {
-    width: 29.28125rem;
-    height: auto;
-    display: flex;
-    padding: 2.5rem;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
-    border-radius: 0.75rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-06, #0f0f0f);
-    max-width: 29.28125rem;
-    overflow: hidden;
-  }
-  
-  .reviewCard .headingContainer {
-    display: flex;
-    align-items: center;
-    gap: 2.5625rem;
-    align-self: stretch;
-  }
-  
-  .reviewCard .authorData {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    flex: 1 0 0;
-  }
-  
-  .authorData .authorName {
-    align-self: stretch;
-    color: var(--Absolute-White, #fff);
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%; /* 1.875rem */
-  }
-  
-  .authorData .authorCountry {
-    align-self: stretch;
-    color: var(--Grey-60, #999);
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%; /* 1.6875rem */
-  }
-  
-  .reviewCard .ratingContainer {
-    display: flex;
-    padding: 0.375rem 0.625rem;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
-    border-radius: 3.1875rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-08, #141414);
-  }
-  
-  .ratingContainer p {
-    color: var(--Grey-60, #999);
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%; /* 1.6875rem */
-  }
-  
-  .reviewCard blockquote p {
-    align-self: stretch;
-    color: var(--Grey-60, #999);
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 1.6875rem */
-  }
-  
-  .detailsContainer .rightSide {
-    display: flex;
-    width: 32.4375rem;
-    padding: 3.125rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.875rem;
-    flex-shrink: 0;
-    border-radius: 0.75rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-10, #1a1a1a);
-    max-width: 30%;
-  }
-  
-  .rightSide .detailSection {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.875rem;
-    align-self: stretch;
-  }
-  
-  .rightSide .headingContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.25rem;
-    align-self: stretch;
-  }
-  
-  .rightSide .textDesc {
-    font-size: 1.25rem;
-  }
-  
-  .langContainer {
-    display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 0.625rem;
-    align-self: stretch;
-    flex-wrap: wrap;
-  }
-  
-  .langContainer .langTag {
-    display: flex;
-    padding: 0.5rem 0.875rem;
-    align-items: flex-start;
-    gap: 0.625rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-08, #141414);
-  }
-  
-  .langTag p {
-    color: var(--Absolute-White, #fff);
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%; /* 1.6875rem */
-  }
-  
-  .detailSection .ratingsContainer {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    align-self: stretch;
-  }
-  
-  .ratingsContainer .ratingCard {
-    display: flex;
-    padding: 1rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-    flex: 1 0 0;
-    border-radius: 0.5rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-08, #141414);
-  }
-  
-  .ratingCard .ratingHeading {
-    color: var(--Absolute-White, #fff);
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 150%; /* 1.875rem */
-  }
-  
-  .ratingCard .ratingContainer {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-  
-  .detailSection .genresContainer {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.625rem;
-  }
-  
-  .genresContainer .genreTag {
-    display: flex;
-    padding: 0.5rem 0.875rem;
-    align-items: flex-start;
-    gap: 0.625rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-08, #141414);
-  }
-  
-  .genreTag p {
-    color: var(--Absolute-White, #fff);
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%; /* 1.6875rem */
-  }
-  
-  .detailSection .directorCard {
-    display: flex;
-    padding: 0.875rem;
-    align-items: center;
-    gap: 0.625rem;
-    align-self: stretch;
-    border-radius: 0.5rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-08, #141414);
-  }
-  .directorCard p {
-    color: var(--Absolute-White, #fff);
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%; /* 1.6875rem */
-  }
-  
+  margin-top: 6.5rem;
+  width: 90%;
+  max-width: 90%;
+  display: flex;
+  gap: 1.25rem;
+  overflow: hidden;
+}
+
+.detailsContainer .leftSide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.25rem;
+  flex: 1 0 0;
+  max-width: 69%;
+}
+
+.leftSide .descSection,
+.leftSide .castSection,
+.leftSide .reviewsSection {
+  display: flex;
+  padding: 2.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+  align-self: stretch;
+  border-radius: 0.625rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-10, #1a1a1a);
+}
+
+.heading {
+  align-self: stretch;
+  color: var(--Grey-60, #999);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.5rem */
+}
+
+.leftSide .textDesc {
+  align-self: stretch;
+  color: var(--Absolute-White, #fff);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.5rem */
+}
+
+.castSection .avatarsContainer {
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+}
+
+.avatarsContainer .avatarContainer {
+  height: 6.8125rem;
+  width: 6.8125rem;
+  flex: 1 0 0;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.avatarsContainer .avatarContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+.avatarsContainer .avatarContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(211, 211, 211, 0.1);
+  border-radius: 0.625rem;
+}
+
+.reviewsSection {
+  width: 100%;
+  overflow: hidden;
+}
+
+.reviewsSection .topContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  align-self: stretch;
+}
+
+.topContainer .headingContainer {
+  flex: 1 0 0;
+}
+
+.reviewsSection .actionButton {
+  display: flex;
+  padding: 0.875rem 1rem;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-08, #141414);
+  color: var(--Absolute-White, #fff);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 153%; /* 1.72125rem */
+}
+
+.reviewsSection .carouselContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4.5rem 0 4.5rem !important;
+  box-sizing: border-box;
+  max-width: 80rem;
+  overflow: hidden;
+}
+
+.carouselContainer .reviewCard {
+  width: 29.28125rem;
+  height: auto;
+  display: flex;
+  padding: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-06, #0f0f0f);
+  max-width: 29.28125rem;
+  max-height: 16.5625rem;
+  overflow: hidden;
+}
+
+.reviewCard .headingContainer {
+  flex: 1 0 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5625rem;
+  align-self: center;
+  max-width: 100%;
+}
+
+.headingContainer .authorContainer {
+  width: 10rem;
+  max-width: 60%;
+  overflow: hidden;
+}
+
+.headingContainer .authorName {
+  align-self: stretch;
+  color: var(--Absolute-White, #fff);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.875rem */
+}
+
+.authorData .authorCountry {
+  align-self: stretch;
+  color: var(--Grey-60, #999);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.6875rem */
+}
+
+.reviewCard .reviewQuote {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.reviewCard .ratingContainer {
+  display: flex;
+  padding: 0.375rem 0.625rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  border-radius: 3.1875rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-08, #141414);
+}
+
+.ratingContainer p,
+.reviewsSection p
+{
+  color: var(--Grey-60, #999);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.6875rem */
+}
+
+.reviewCard blockquote p {
+  align-self: stretch;
+  color: var(--Grey-60, #999);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.6875rem */
+}
+
+.detailsContainer .rightSide {
+  display: flex;
+  width: 32.4375rem;
+  padding: 3.125rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.875rem;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-10, #1a1a1a);
+  max-width: 30%;
+}
+
+.rightSide .detailSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.875rem;
+  align-self: stretch;
+}
+
+.rightSide .headingContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+  align-self: stretch;
+}
+
+.rightSide .textDesc {
+  font-size: 1.25rem;
+}
+
+.langContainer {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 0.625rem;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.langContainer .langTag {
+  display: flex;
+  padding: 0.5rem 0.875rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-08, #141414);
+}
+
+.langTag p {
+  color: var(--Absolute-White, #fff);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.6875rem */
+}
+
+.detailSection .ratingsContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  align-self: stretch;
+}
+
+.ratingsContainer .ratingCard {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  flex: 1 0 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-08, #141414);
+}
+
+.ratingCard .ratingHeading {
+  color: var(--Absolute-White, #fff);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 1.875rem */
+}
+
+.ratingCard .ratingContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.detailSection .genresContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+
+.genresContainer .genreTag {
+  display: flex;
+  padding: 0.5rem 0.875rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-08, #141414);
+}
+
+.genreTag p {
+  color: var(--Absolute-White, #fff);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.6875rem */
+}
+
+.detailSection .directorCard {
+  display: flex;
+  padding: 0.875rem;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+  border-radius: 0.5rem;
+  border: 1px solid var(--Black-15, #262626);
+  background: var(--Black-08, #141414);
+}
+.directorCard p {
+  color: var(--Absolute-White, #fff);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.6875rem */
+}

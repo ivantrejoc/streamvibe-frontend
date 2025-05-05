@@ -6,46 +6,64 @@ import styles from "./movieInfo.module.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import {
+  Cast,
+  Crew,
+  Review,
+  Spokenlanguage
+} from "@streambive/app/api/models/movieDetail.model";
+import { Genre } from "@streambive/app/api/models/genre.model";
 
-export default function MovieInfo() {
+interface MovieInfo {
+  description: string;
+  casting: Cast[];
+  director?: Crew;
+  music?: Crew;
+  reviews: Review[];
+  releaseYear: string;
+  languages: Spokenlanguage[];
+  rating: number;
+  genres: Genre[];
+}
+
+export default function MovieInfo({
+  description,
+  casting,
+  director,
+  music,
+  reviews,
+  releaseYear,
+  languages,
+  rating,
+  genres
+}: MovieInfo) {
+  const imageBaseUrl = process.env.NEXT_PUBLIC_IMAGES_API_URL;
+  const imdbRating = (rating / 10) * 5;
+  const streamVibeRating = imdbRating + 0.75;
+  
   return (
     <div className={styles.detailsContainer}>
       <div className={styles.leftSide}>
         <div className={styles.descSection}>
           <h4 className={styles.heading}>Description</h4>
-          <p className={styles.textDesc}>
-            A fiery young man clashes with an unflinching forest officer in a
-            south Indian village where spirituality, fate and folklore rule the
-            lands.
-          </p>
+          <p className={styles.textDesc}>{description}</p>
         </div>
         <div className={styles.castSection}>
           <h4 className={styles.heading}>Cast</h4>
           <div className={styles.avatarsContainer}>
-            <div className={styles.avatarContainer}>
-              <Image src="/actor-1.png" alt="actor" width={100} height={100} />
-            </div>
-            <div className={styles.avatarContainer}>
-              <Image src="/actor-1.png" alt="actor" width={100} height={100} />
-            </div>
-            <div className={styles.avatarContainer}>
-              <Image src="/actor-1.png" alt="actor" width={100} height={100} />
-            </div>
-            <div className={styles.avatarContainer}>
-              <Image src="/actor-1.png" alt="actor" width={100} height={100} />
-            </div>
-            <div className={styles.avatarContainer}>
-              <Image src="/actor-1.png" alt="actor" width={100} height={100} />
-            </div>
-            <div className={styles.avatarContainer}>
-              <Image src="/actor-1.png" alt="actor" width={100} height={100} />
-            </div>
-            <div className={styles.avatarContainer}>
-              <Image src="/actor-1.png" alt="actor" width={100} height={100} />
-            </div>
-            <div className={styles.avatarContainer}>
-              <Image src="/actor-1.png" alt="actor" width={100} height={100} />
-            </div>
+            {casting?.map((actor) => {
+              const profileImage = `${imageBaseUrl}w185${actor.profile_path}`;
+              return (
+                <div key={actor.id} className={styles.avatarContainer}>
+                  <Image
+                    src={profileImage}
+                    alt="actor"
+                    width={80}
+                    height={80}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className={styles.reviewsSection}>
@@ -65,165 +83,68 @@ export default function MovieInfo() {
               Add Your Review
             </button>
           </div>
-          <Swiper
-            slidesPerView={2}
-            spaceBetween={200}
-            navigation={true}
-            pagination={{ clickable: true }}
-            keyboard={{ enabled: true }}
-            modules={[Navigation, Pagination, Autoplay, Keyboard]}
-            className={styles.carouselContainer}
-            // breakpoints={{
-            //   720: {
-            //     slidesPerView: 2,
-            //     spaceBetween: 50,
-            //     centeredSlides: true
-            //   },
-            //   1024: {
-            //     slidesPerView: 2,
-            //     spaceBetween: 100
-            //   },
-            //   1280: {
-            //     slidesPerView: 3,
-            //     spaceBetween: 120
-            //   },
-            //   1440: {
-            //     slidesPerView: 4,
-            //     spaceBetween: 100
-            //   }
-            // }}
-          >
-            <SwiperSlide className={styles.reviewCard}>
-              <div className={styles.headingContainer}>
-                <div className={styles.authorData}>
-                  <h5 className={styles.authorName}>Aniket Roy</h5>
-                  <p className={styles.authorCountry}>From India</p>
-                </div>
-                <div className={styles.ratingContainer}>
-                  <Rating
-                    initialValue={4.5}
-                    readonly={true}
-                    allowFraction={true}
-                    size={20}
-                    className={styles.starRating}
-                    fillColor="var(--Red-45, #e50000)"
-                  />
-                  <p>4.5</p>
-                </div>
-              </div>
-              <blockquote>
-                <p>
-                  This movie was recommended to me by a very dear friend who
-                  went for the movie by herself. I went to the cinemas to watch
-                  but had a houseful board so couldn’t watch it.
-                </p>
-              </blockquote>
-            </SwiperSlide>
-            <SwiperSlide className={styles.reviewCard}>
-              <div className={styles.headingContainer}>
-                <div className={styles.authorData}>
-                  <h5 className={styles.authorName}>Aniket Roy</h5>
-                  <p className={styles.authorCountry}>From India</p>
-                </div>
-                <div className={styles.ratingContainer}>
-                  <Rating
-                    initialValue={4.5}
-                    readonly={true}
-                    allowFraction={true}
-                    size={20}
-                    className={styles.starRating}
-                    fillColor="var(--Red-45, #e50000)"
-                  />
-                  <p>4.5</p>
-                </div>
-              </div>
-              <blockquote>
-                <p>
-                  This movie was recommended to me by a very dear friend who
-                  went for the movie by herself. I went to the cinemas to watch
-                  but had a houseful board so couldn’t watch it.
-                </p>
-              </blockquote>
-            </SwiperSlide>
-            <SwiperSlide className={styles.reviewCard}>
-              <div className={styles.headingContainer}>
-                <div className={styles.authorData}>
-                  <h5 className={styles.authorName}>Aniket Roy</h5>
-                  <p className={styles.authorCountry}>From India</p>
-                </div>
-                <div className={styles.ratingContainer}>
-                  <Rating
-                    initialValue={4.5}
-                    readonly={true}
-                    allowFraction={true}
-                    size={20}
-                    className={styles.starRating}
-                    fillColor="var(--Red-45, #e50000)"
-                  />
-                  <p>4.5</p>
-                </div>
-              </div>
-              <blockquote>
-                <p>
-                  This movie was recommended to me by a very dear friend who
-                  went for the movie by herself. I went to the cinemas to watch
-                  but had a houseful board so couldn’t watch it.
-                </p>
-              </blockquote>
-            </SwiperSlide>
-            <SwiperSlide className={styles.reviewCard}>
-              <div className={styles.headingContainer}>
-                <div className={styles.authorData}>
-                  <h5 className={styles.authorName}>Aniket Roy</h5>
-                  <p className={styles.authorCountry}>From India</p>
-                </div>
-                <div className={styles.ratingContainer}>
-                  <Rating
-                    initialValue={4.5}
-                    readonly={true}
-                    allowFraction={true}
-                    size={20}
-                    className={styles.starRating}
-                    fillColor="var(--Red-45, #e50000)"
-                  />
-                  <p>4.5</p>
-                </div>
-              </div>
-              <blockquote>
-                <p>
-                  This movie was recommended to me by a very dear friend who
-                  went for the movie by herself. I went to the cinemas to watch
-                  but had a houseful board so couldn’t watch it.
-                </p>
-              </blockquote>
-            </SwiperSlide>
-            <SwiperSlide className={styles.reviewCard}>
-              <div className={styles.headingContainer}>
-                <div className={styles.authorData}>
-                  <h5 className={styles.authorName}>Aniket Roy</h5>
-                  <p className={styles.authorCountry}>From India</p>
-                </div>
-                <div className={styles.ratingContainer}>
-                  <Rating
-                    initialValue={4.5}
-                    readonly={true}
-                    allowFraction={true}
-                    size={20}
-                    className={styles.starRating}
-                    fillColor="var(--Red-45, #e50000)"
-                  />
-                  <p>4.5</p>
-                </div>
-              </div>
-              <blockquote>
-                <p>
-                  This movie was recommended to me by a very dear friend who
-                  went for the movie by herself. I went to the cinemas to watch
-                  but had a houseful board so couldn’t watch it.
-                </p>
-              </blockquote>
-            </SwiperSlide>
-          </Swiper>
+          {reviews && reviews.length > 0 ? (
+            <Swiper
+              slidesPerView={2}
+              spaceBetween={200}
+              navigation={true}
+              pagination={{ clickable: true }}
+              keyboard={{ enabled: true }}
+              modules={[Navigation, Pagination, Autoplay, Keyboard]}
+              className={styles.carouselContainer}
+              // breakpoints={{
+              //   720: {
+              //     slidesPerView: 2,
+              //     spaceBetween: 50,
+              //     centeredSlides: true
+              //   },
+              //   1024: {
+              //     slidesPerView: 2,
+              //     spaceBetween: 100
+              //   },
+              //   1280: {
+              //     slidesPerView: 3,
+              //     spaceBetween: 120
+              //   },
+              //   1440: {
+              //     slidesPerView: 4,
+              //     spaceBetween: 100
+              //   }
+              // }}
+            >
+              {reviews.map((review) => {
+                return (
+                  <SwiperSlide key={review.id} className={styles.reviewCard}>
+                    <div className={styles.headingContainer}>
+                      <div className={styles.authorContainer}>
+                        <h5 className={styles.authorName}>
+                          {review.author_details.username}
+                        </h5>
+                      </div>
+                      <div className={styles.ratingContainer}>
+                        <Rating
+                          initialValue={review.author_details.rating}
+                          readonly={true}
+                          allowFraction={true}
+                          size={20}
+                          className={styles.starRating}
+                          fillColor="var(--Red-45, #e50000)"
+                        />
+                        <p>{review.author_details.rating}</p>
+                      </div>
+                    </div>
+                    <blockquote className={styles.reviewQuote}>
+                      <p>{review.content}</p>
+                    </blockquote>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          ) : (
+            <div>
+              <p>No reviews</p>
+            </div>
+          )}
         </div>
       </div>
       <div className={styles.rightSide}>
@@ -240,7 +161,7 @@ export default function MovieInfo() {
             />
             <h4 className={styles.heading}>Released Year</h4>
           </div>
-          <p className={styles.textDesc}>2022</p>
+          <p className={styles.textDesc}>{releaseYear}</p>
         </div>
         <div className={styles.detailSection}>
           <div className={styles.headingContainer}>
@@ -256,15 +177,13 @@ export default function MovieInfo() {
             <h4 className={styles.heading}>Available Languages</h4>
           </div>
           <div className={styles.langContainer}>
-            <div className={styles.langTag}>
-              <p>English</p>
-            </div>
-            <div className={styles.langTag}>
-              <p>French</p>
-            </div>
-            <div className={styles.langTag}>
-              <p>Spanish</p>
-            </div>
+            {languages?.map((language, index) => {
+              return (
+                <div key={index} className={styles.langTag}>
+                  <p>{language.english_name}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className={styles.detailSection}>
@@ -285,28 +204,28 @@ export default function MovieInfo() {
               <h4 className={styles.ratingHeading}>IMDb</h4>
               <div className={styles.ratingContainer}>
                 <Rating
-                  initialValue={4.5}
+                  initialValue={imdbRating}
                   readonly={true}
                   allowFraction={true}
                   size={20}
                   className={styles.starRating}
                   fillColor="var(--Red-45, #e50000)"
                 />
-                <p>4.5</p>
+                <p>{rating.toFixed(2)}</p>
               </div>
             </div>
             <div className={styles.ratingCard}>
               <h4 className={styles.ratingHeading}>Streamvibe</h4>
               <div className={styles.ratingContainer}>
                 <Rating
-                  initialValue={4.5}
+                  initialValue={streamVibeRating}
                   readonly={true}
                   allowFraction={true}
                   size={20}
                   className={styles.starRating}
                   fillColor="var(--Red-45, #e50000)"
                 />
-                <p>4.5</p>
+                <p>{(rating + 0.75).toFixed(2)}</p>
               </div>
             </div>
           </div>
@@ -325,12 +244,13 @@ export default function MovieInfo() {
             <h4 className={styles.heading}>Genres</h4>
           </div>
           <div className={styles.genresContainer}>
-            <div className={styles.genreTag}>
-              <p>Action</p>
-            </div>
-            <div className={styles.genreTag}>
-              <p>Adventure</p>
-            </div>
+            {genres?.map((genre) => {
+              return (
+                <div key={genre.id} className={styles.genreTag}>
+                  <p>{genre.name}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className={styles.detailSection}>
@@ -338,8 +258,13 @@ export default function MovieInfo() {
             <h4 className={styles.heading}>Director</h4>
           </div>
           <div className={styles.directorCard}>
-            <Image src="/actor-1.png" alt="actor" width={56} height={56} />
-            <p>Rishab Shetty</p>
+            <Image
+              src={`${imageBaseUrl}w185${director?.profile_path}`}
+              alt="actor"
+              width={56}
+              height={56}
+            />
+            <p>{director?.name}</p>
           </div>
         </div>
         <div className={styles.detailSection}>
@@ -347,8 +272,13 @@ export default function MovieInfo() {
             <h4 className={styles.heading}>Music</h4>
           </div>
           <div className={styles.directorCard}>
-            <Image src="/actor-1.png" alt="actor" width={56} height={56} />
-            <p>Rishab Shetty</p>
+            <Image
+              src={`${imageBaseUrl}w185${music?.profile_path}`}
+              alt="actor"
+              width={56}
+              height={56}
+            />
+            <p>{music?.name}</p>
           </div>
         </div>
       </div>

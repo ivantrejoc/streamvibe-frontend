@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect } from "react";
+import { use, useEffect, useMemo } from "react";
 import { useAppDispatch, useAppSelector } from "@streambive/redux/store";
 import { fetchMovieById } from "@streambive/redux/features/movies/movieById/movieByIdSlice";
 import VideoHero from "@streambive/app/components/videoHero/VideoHero";
@@ -26,8 +26,30 @@ export default function MovieDetails({ params }: MovieParams) {
 
   const videos = movie?.videos?.results;
   const videoPath = videos?.find((video) => video.type === "Trailer");
+  const memoVideoPath = useMemo(() => videoPath, [videoPath]);
 
-  console.log("THE MOVIE DETAILS: ", movie);
+  const casting = movie?.credits?.cast.slice(0, 7);
+  const memoCasting = useMemo(() => casting, [casting]);
+
+  const director = movie?.credits?.crew.find(
+    (personnel) => personnel.known_for_department === "Directing"
+  );
+  const memoDirector = useMemo(() => director, [director]);
+
+  const music = movie?.credits?.crew.find(
+    (personnel) => personnel.known_for_department === "Sound"
+  );
+  const memoMusic = useMemo(() => music, [music]);
+
+  const reviews = movie?.reviews?.results;
+  const memoReviews = useMemo(() => reviews, [reviews]);
+
+  const releaseYear = movie?.release_date?.slice(0, 4);
+  const memoReleaseYear = useMemo(() => releaseYear, [releaseYear]);
+
+  const languages = movie?.spoken_languages;
+  const rating = movie?.vote_average;
+  const genres = movie?.genres;
 
   if (loading) {
     return <div>Loading...</div>;
@@ -37,7 +59,7 @@ export default function MovieDetails({ params }: MovieParams) {
     return <div>Movie not found.</div>;
   }
 
-  if (!videoPath) {
+  if (!memoVideoPath) {
     return <div>No trailers available.</div>;
   }
 
@@ -49,9 +71,19 @@ export default function MovieDetails({ params }: MovieParams) {
           title={movie.original_title}
           synopsis={movie.overview}
           imagePath={movie.backdrop_path}
-          videoPath={videoPath}
+          videoPath={memoVideoPath}
         />
-        <MovieInfo />
+        <MovieInfo
+          description={movie?.overview}
+          casting={memoCasting}
+          director={memoDirector}
+          music={memoMusic}
+          reviews={memoReviews}
+          releaseYear={memoReleaseYear}
+          languages={languages}
+          rating={rating}
+          genres={genres}
+        />
         <FreeTrialHero />
       </main>
     </div>

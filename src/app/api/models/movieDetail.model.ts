@@ -18,6 +18,7 @@ export interface MovieDetail {
   release_date: string;
   revenue: number;
   runtime: number;
+  reviews: ReviewsResponse;
   spoken_languages: Spokenlanguage[];
   status: string;
   tagline: string;
@@ -78,7 +79,7 @@ interface Credits {
   crew: Crew[];
 }
 
-interface Crew {
+export interface Crew {
   adult: boolean;
   gender: number;
   id: number;
@@ -92,7 +93,7 @@ interface Crew {
   job: string;
 }
 
-interface Cast {
+export interface Cast {
   adult: boolean;
   gender: number;
   id: number;
@@ -107,7 +108,7 @@ interface Cast {
   order: number;
 }
 
-interface Spokenlanguage {
+export interface Spokenlanguage {
   english_name: string;
   iso_639_1: string;
   name: string;
@@ -125,7 +126,30 @@ interface Productioncompany {
   origin_country: string;
 }
 
-interface Genre {
+export interface Genre {
   id: number;
   name: string;
+}
+interface ReviewsResponse {
+  page: number;
+  results: Review[];
+  total_pages: number;
+  total_results: number;
+}
+
+export interface Review {
+  author: string;
+  author_details: Authordetails;
+  content: string;
+  created_at: string;
+  id: string;
+  updated_at: string;
+  url: string;
+}
+
+interface Authordetails {
+  name: string;
+  username: string;
+  avatar_path: null;
+  rating: number;
 }
