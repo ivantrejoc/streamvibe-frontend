@@ -4,7 +4,8 @@ import { useAppDispatch, useAppSelector } from "@streambive/redux/store";
 import { fetchMovieById } from "@streambive/redux/features/movies/movieById/movieByIdSlice";
 import VideoHero from "@streambive/app/components/videoHero/VideoHero";
 import styles from "../../../styles/views.module.css";
-
+import { FreeTrialHero } from "@streambive/app/components/freeTrialHero";
+import { MovieInfo } from "@streambive/app/components/movieInfo";
 interface MovieParams {
   params: Promise<Params>;
 }
@@ -50,6 +51,8 @@ export default function MovieDetails({ params }: MovieParams) {
           imagePath={movie.backdrop_path}
           videoPath={videoPath}
         />
+        <MovieInfo />
+        <FreeTrialHero />
       </main>
     </div>
   );

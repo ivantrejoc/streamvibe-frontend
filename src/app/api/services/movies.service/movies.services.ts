@@ -59,7 +59,7 @@ export const getTopRatedMovies = async () => {
 export const getMovieById = async (id: string) => {
   try {
     const movieById = await axios.get(
-      `${URL}/movie/${id}?append_to_response=credits,videos,images`,
+      `${URL}/movie/${id}?append_to_response=credits,videos,images,reviews`,
       {
         headers: {
           Authorization: `Bearer ${API_TOKEN}`,
