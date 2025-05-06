@@ -57,7 +57,7 @@ export default function MoviesAndShowsSlider({ trendings }: TrendingProps) {
                 <div className={styles.buttonsContainer}>
                   <Link
                     href={
-                      trending.media_type !== "tv"
+                      trending.media_type === "movie"
                         ? `/movie/${trendingStringId}`
                         : `/tv-show/${trendingStringId}`
                     }

@@ -13,12 +13,11 @@ export type SectionData = {
   title: string;
   moviesOrShows: Movie[];
 };
-export default function MoviesSection({ sectionTitle,
+export default function MoviesSection({
+  sectionTitle,
   trendingAndReleases,
   topRated
 }: MoviesSectionProps) {
-
-
   return (
     <section className={styles.moviesSectionMainContainer}>
       <div className={styles.moviesHeadingContainer}>
@@ -34,7 +33,10 @@ export default function MoviesSection({ sectionTitle,
             moviesOrShows={section.moviesOrShows}
           />
         ))}
-        <MustWatchSlider title={topRated.title} moviesOrShows={topRated.moviesOrShows} />
+        <MustWatchSlider
+          title={topRated.title}
+          moviesOrShows={topRated.moviesOrShows}
+        />
       </div>
     </section>
   );

@@ -141,7 +141,7 @@ export default function MovieInfo({
               })}
             </Swiper>
           ) : (
-            <div>
+            <div className={styles.alertContainer}>
               <p>No reviews</p>
             </div>
           )}
@@ -211,7 +211,7 @@ export default function MovieInfo({
                   className={styles.starRating}
                   fillColor="var(--Red-45, #e50000)"
                 />
-                <p>{rating.toFixed(2)}</p>
+                <p>{rating?.toFixed(2)}</p>
               </div>
             </div>
             <div className={styles.ratingCard}>

@@ -27,7 +27,9 @@ export default function MovieDetails({ params }: MovieParams) {
   const videos = movie?.videos?.results;
   const videoPath = videos?.find((video) => video.type === "Trailer");
   const memoVideoPath = useMemo(() => videoPath, [videoPath]);
-
+  const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(
+    movie?.original_title || ""
+  )}`;
   const casting = movie?.credits?.cast.slice(0, 7);
   const memoCasting = useMemo(() => casting, [casting]);
 
@@ -59,10 +61,6 @@ export default function MovieDetails({ params }: MovieParams) {
     return <div>Movie not found.</div>;
   }
 
-  if (!memoVideoPath) {
-    return <div>No trailers available.</div>;
-  }
-
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -71,7 +69,7 @@ export default function MovieDetails({ params }: MovieParams) {
           title={movie.original_title}
           synopsis={movie.overview}
           imagePath={movie.backdrop_path}
-          videoPath={memoVideoPath}
+          videoPath={memoVideoPath || youtubeSearchUrl}
         />
         <MovieInfo
           description={movie?.overview}

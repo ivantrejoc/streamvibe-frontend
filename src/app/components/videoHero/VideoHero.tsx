@@ -6,7 +6,7 @@ interface VideoHeroProps {
   title: string;
   synopsis: string;
   imagePath: string;
-  videoPath: Video;
+  videoPath: Video | string;
 }
 
 type Video = {
@@ -30,9 +30,11 @@ export default function VideoHero({
 }: VideoHeroProps) {
   const imageBaseUrl = process.env.NEXT_PUBLIC_IMAGES_API_URL;
   const backgroundImage = `${imageBaseUrl}w1280${imagePath}`;
-  const youtubeBaseUrl = "https://www.youtube.com/watch?v=";
-  const videoKey = videoPath.key;
-  const youtubeTrailerUrl = `${youtubeBaseUrl}${videoKey}`;
+
+  const videoUrl =
+    typeof videoPath === "string"
+      ? videoPath
+      : `https://www.youtube.com/watch?v=${videoPath.key}`;
 
   return (
     <section className={styles.mainContainer}>
@@ -46,7 +48,7 @@ export default function VideoHero({
             <p className={styles.paragraph}>{synopsis}</p>
           </div>
           <div className={styles.buttonsContainer}>
-            <Link href={youtubeTrailerUrl} passHref legacyBehavior>
+            <Link href={videoUrl} passHref legacyBehavior>
               <a
                 className={styles.playButton}
                 target="_blank"

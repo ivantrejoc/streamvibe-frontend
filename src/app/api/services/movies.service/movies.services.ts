@@ -1,4 +1,5 @@
 import axios from "axios";
+import MovieOrShow from "../../models/movieOrShow.model";
 const URL = process.env.NEXT_PUBLIC_API_URL;
 const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
@@ -12,7 +13,12 @@ export const getMoviesNewReleases = async () => {
     if (apiMoviesReleases.status !== 200) {
       throw new Error(apiMoviesReleases.statusText);
     }
-    const moviesReleases = apiMoviesReleases.data.results;
+    const moviesReleases = apiMoviesReleases.data.results.map(
+      (movie: MovieOrShow) => ({
+        ...movie,
+        media_type: "movie",
+      })
+    );
     return moviesReleases;
   } catch (error) {
     console.error(error);
@@ -31,7 +37,7 @@ export const getMoviesNewReleases = async () => {
 
 export const getTopRatedMovies = async () => {
   try {
-    const apiTopRatedMovies = await axios.get(`${URL}/movie/top_rated?`, {
+    const apiTopRatedMovies = await axios.get(`${URL}/movie/top_rated`, {
       headers: {
         Authorization: `Bearer ${API_TOKEN}`,
       },
@@ -39,7 +45,12 @@ export const getTopRatedMovies = async () => {
     if (apiTopRatedMovies.status !== 200) {
       throw new Error(apiTopRatedMovies.statusText);
     }
-    const topRatedMovies = apiTopRatedMovies.data.results;
+    const topRatedMovies = apiTopRatedMovies.data.results.map(
+      (movie: MovieOrShow) => ({
+        ...movie,
+        media_type: "movie",
+      })
+    );
     return topRatedMovies;
   } catch (error) {
     console.error(error);
