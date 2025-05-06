@@ -116,13 +116,13 @@
 }
 
 /* Media Queries */
-@media (max-width: 1280) {
+@media (max-width: 1280px) {
   .heroTextContainer {
     padding: 0rem 5.75rem;
     gap: 1.875rem;
   }
 }
-@media (max-width: 1024) {
+@media (max-width: 1024px) {
   .heroContainer {
     height: auto;
   }
@@ -178,7 +178,7 @@
   }
 }
 
-@media (max-width: 720) {
+@media (max-width: 720px) {
   .heroContainer {
     height: auto;
   }
