@@ -248,7 +248,7 @@ export default function MovieInfo({
                         initialValue={review.author_details.rating}
                         readonly={true}
                         allowFraction={true}
-                        size={20}
+                        size={10}
                         className={styles.starRating}
                         fillColor="var(--Red-45, #e50000)"
                       />
@@ -314,7 +314,7 @@ export default function MovieInfo({
           {reviews && reviews.length > 0 ? (
             <Swiper
               slidesPerView={2}
-              spaceBetween={200}
+              spaceBetween={100}
               navigation={true}
               pagination={{ clickable: true }}
               keyboard={{ enabled: true }}
@@ -335,7 +335,8 @@ export default function MovieInfo({
                           initialValue={review.author_details.rating}
                           readonly={true}
                           allowFraction={true}
-                          size={20}
+                          iconsCount={5}
+                          size={14}
                           className={styles.starRating}
                           fillColor="var(--Red-45, #e50000)"
                         />

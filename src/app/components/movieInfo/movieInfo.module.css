@@ -26,13 +26,13 @@
   gap: 0.625rem;
   align-self: stretch;
   border-radius: 0.625rem;
-  border: 1px solid var(--Black-15, #262626);
-  background: var(--Black-10, #1a1a1a);
+  border: 1px solid var(--black-border);
+  background: var(--black-20);
 }
 
 .heading {
   align-self: stretch;
-  color: var(--Grey-60, #999);
+  color: var(--text-grey);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -41,7 +41,7 @@
 
 .leftSide .textDesc {
   align-self: stretch;
-  color: var(--Absolute-White, #fff);
+  color: var(--absolute-white);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -105,9 +105,9 @@
   align-items: center;
   gap: 0.25rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--Black-15, #262626);
-  background: var(--Black-08, #141414);
-  color: var(--Absolute-White, #fff);
+  border: 1px solid var(--black-border);
+  background: var(--black-10);
+  color: var(--absolute-white);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -128,17 +128,17 @@
 
 .carouselContainer .reviewCard {
   width: 29.28125rem;
-  height: auto;
+  height: 22.5625rem;
   display: flex;
   padding: 2.5rem;
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
   border-radius: 0.75rem;
-  border: 1px solid var(--Black-15, #262626);
-  background: var(--Black-06, #0f0f0f);
+  border: 1px solid var(--black-border);
+  background: var(--black-06);
   max-width: 29.28125rem;
-  max-height: 16.5625rem;
+  max-height: 22.5625rem;
   overflow: hidden;
 }
 
@@ -146,20 +146,19 @@
   flex: 1 0 0;
   display: flex;
   align-items: center;
-  gap: 1.5625rem;
+  gap: 1.25rem;
   align-self: center;
   max-width: 100%;
 }
 
 .headingContainer .authorContainer {
-  width: 10rem;
-  max-width: 60%;
+  max-width: 70%;
   overflow: hidden;
 }
 
-.headingContainer .authorName {
+.authorContainer .authorName {
   align-self: stretch;
-  color: var(--Absolute-White, #fff);
+  color: var(--absolute-white);
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 500;
@@ -168,7 +167,7 @@
 
 .authorData .authorCountry {
   align-self: stretch;
-  color: var(--Grey-60, #999);
+  color: var(--text-grey);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -187,13 +186,13 @@
   justify-content: center;
   gap: 0.25rem;
   border-radius: 3.1875rem;
-  border: 1px solid var(--Black-15, #262626);
+  border: 1px solid var(--black-border);
   background: var(--Black-08, #141414);
 }
 
 .ratingContainer p,
 .reviewsSection p {
-  color: var(--Grey-60, #999);
+  color: var(--text-grey);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -202,7 +201,7 @@
 
 .reviewCard blockquote p {
   align-self: stretch;
-  color: var(--Grey-60, #999);
+  color: var(--text-grey);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
@@ -218,8 +217,8 @@
   gap: 1.875rem;
   flex-shrink: 0;
   border-radius: 0.75rem;
-  border: 1px solid var(--Black-15, #262626);
-  background: var(--Black-10, #1a1a1a);
+  border: 1px solid var(--black-border);
+  background: var(--black-20);
   max-width: 30%;
 }
 
@@ -258,12 +257,12 @@
   align-items: flex-start;
   gap: 0.625rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--Black-15, #262626);
+  border: 1px solid var(--black-border);
   background: var(--Black-08, #141414);
 }
 
 .langTag p {
-  color: var(--Absolute-White, #fff);
+  color: var(--absolute-white);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -285,12 +284,12 @@
   gap: 0.25rem;
   flex: 1 0 0;
   border-radius: 0.5rem;
-  border: 1px solid var(--Black-15, #262626);
+  border: 1px solid var(--black-border);
   background: var(--Black-08, #141414);
 }
 
 .ratingCard .ratingHeading {
-  color: var(--Absolute-White, #fff);
+  color: var(--absolute-white);
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 600;
@@ -315,12 +314,12 @@
   align-items: flex-start;
   gap: 0.625rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--Black-15, #262626);
+  border: 1px solid var(--black-border);
   background: var(--Black-08, #141414);
 }
 
 .genreTag p {
-  color: var(--Absolute-White, #fff);
+  color: var(--absolute-white);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -334,11 +333,11 @@
   gap: 0.625rem;
   align-self: stretch;
   border-radius: 0.5rem;
-  border: 1px solid var(--Black-15, #262626);
+  border: 1px solid var(--black-border);
   background: var(--Black-08, #141414);
 }
 .directorCard p {
-  color: var(--Absolute-White, #fff);
+  color: var(--absolute-white);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -364,8 +363,8 @@
     align-items: flex-start;
     align-self: stretch;
     border-radius: 0.625rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-10, #1a1a1a);
+    border: 1px solid var(--black-border);
+    background: var(--black-20);
     gap: 0.5rem;
   }
 
@@ -418,6 +417,10 @@
     font-size: 0.875rem;
   }
 
+  .ratingHeading .starRating svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
   .reviewCard .ratingContainer {
     gap: 0.125rem;
   }
@@ -443,8 +446,8 @@
     gap: 1rem;
     align-self: stretch;
     border-radius: 0.625rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-10, #1a1a1a);
+    border: 1px solid var(--black-border);
+    background: var(--black-20);
   }
 
   .avatarsContainer .avatarContainer {
@@ -460,8 +463,8 @@
     gap: 1.5rem;
     align-self: stretch;
     border-radius: 0.625rem;
-    border: 1px solid var(--Black-15, #262626);
-    background: var(--Black-10, #1a1a1a);
+    border: 1px solid var(--black-border);
+    background: var(--black-20);
   }
 
   .reviewsSection .topContainer {

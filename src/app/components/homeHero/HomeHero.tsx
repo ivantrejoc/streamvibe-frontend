@@ -9,6 +9,15 @@ export default function HomeHero() {
   return (
     <section className={styles.heroContainer}>
       <div className={styles.heroSubcontainer}>
+        <div className={styles.logoContainer}>
+          <Image
+            width={600}
+            height={600}
+            className={styles.transparentLogo}
+            alt="logo-transparent"
+            src={"/logo-transparent.png"}
+          />
+        </div>
         <div className={styles.imageContainer}>
           <Image
             fill
@@ -42,7 +51,7 @@ export default function HomeHero() {
           />
         </div>
       </div>
-      <div className={styles.logoContainer}>
+      {/* <div className={styles.logoContainer}>
         <Image
           width={600}
           height={600}
@@ -51,7 +60,7 @@ export default function HomeHero() {
           alt="logo-transparent"
           src={"/logo-transparent.png"}
         />
-      </div>
+      </div> */}
       <div className={styles.heroTextContainer}>
         <div className={styles.textContainer}>
           <h2 className={styles.heroTitle}>The Best Streaming Experience</h2>

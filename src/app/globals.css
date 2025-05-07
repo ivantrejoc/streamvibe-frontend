@@ -1,6 +1,12 @@
 :root {
   --background: #1e1e1e;
-  --foreground: #ffffff;  
+  --foreground: #ffffff;
+  --absolute-white: #fff;
+  --text-grey: #999;
+  --black-border: #262626;
+  --black-10: #141414;
+  --black-06: #0f0f0f;
+  --black-20: #1a1a1a;
 }
 
 html,
@@ -33,7 +39,7 @@ a {
 .swiper-button-next {
   --swiper-navigation-size: 4rem;
   --swiper-navigation-sides-offset: 1rem;
-  --swiper-navigation-color: #ffffff;
+  --swiper-navigation-color: var(--absolute-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,6 +60,10 @@ a {
 }
 
 @media (max-width: 720px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    --swiper-navigation-size: 2.5rem;
+  }
   .swiper-pagination {
     display: none !important;
   }

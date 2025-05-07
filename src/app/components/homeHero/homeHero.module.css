@@ -2,7 +2,6 @@
 .heroContainer {
   display: flex;
   width: 100%;
-  height: 68.25rem;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.625rem;
@@ -14,7 +13,7 @@
 .heroSubcontainer {
   display: flex;
   width: 100%;
-  height: 53.75rem;
+  height: 100dvh;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.25rem;
@@ -40,10 +39,20 @@
 .logoContainer {
   width: 100%;
   height: 100%;
+  max-height: 110dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
+  z-index: 100;
+}
+
+.logoContainer .transparentLogo {
+  object-fit: contain;
+  width: 60%;
+  height: auto;
+  max-width: 600px;
+  max-height: 600px;
 }
 
 .heroTextContainer {
@@ -145,10 +154,14 @@
     object-fit: cover;
   }
 
-  .transparentLogo {
-    width: 25rem;
-    height: 25rem;
-    top: 9.375rem;
+  .logoContainer {
+    max-height: 65dvh;
+  }
+
+  .logoContainer .transparentLogo {
+    width: 50%;
+    max-width: 400px;
+    max-height: 400px;
   }
 
   .textContainer {
@@ -201,10 +214,14 @@
     object-fit: cover;
   }
 
+  .logoContainer {
+    max-height: 65dvh;
+  }
+
   .transparentLogo {
-    width: 12.5rem;
-    height: 12.5rem;
-    top: 9.375rem;
+    width: 70%;
+    max-width: 300px;
+    max-height: 300px;
   }
 
   .heroTextContainer {
