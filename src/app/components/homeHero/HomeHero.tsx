@@ -50,17 +50,7 @@ export default function HomeHero() {
             src={"/image-container-3.png"}
           />
         </div>
-      </div>
-      {/* <div className={styles.logoContainer}>
-        <Image
-          width={600}
-          height={600}
-          className={styles.transparentLogo}
-          style={{ objectFit: "cover", position: "absolute" }}
-          alt="logo-transparent"
-          src={"/logo-transparent.png"}
-        />
-      </div> */}
+      </div>   
       <div className={styles.heroTextContainer}>
         <div className={styles.textContainer}>
           <h2 className={styles.heroTitle}>The Best Streaming Experience</h2>

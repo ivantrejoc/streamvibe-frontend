@@ -38,32 +38,29 @@ export default function CategoriesSection({ categories }: CategoryProps) {
       </div>
 
       <Swiper
-        slidesPerView={1}
-        spaceBetween={150}
-        loop={true}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        slidesPerView={5}
+        spaceBetween={30}
         navigation={true}
         pagination={{ clickable: true }}
         keyboard={{ enabled: true }}
         modules={[Navigation, Pagination, Autoplay, Keyboard]}
         className={styles.carouselContainer}
         breakpoints={{
-          720: {
+          0: {
             slidesPerView: 2,
-            spaceBetween: 50,
-            centeredSlides: true
+            spaceBetween: 20
+          },
+          720: {
+            slidesPerView: 3,
+            spaceBetween: 10
           },
           1024: {
-            slidesPerView: 2,
-            spaceBetween: 100
+            slidesPerView: 4,
+            spaceBetween: 10
           },
           1280: {
-            slidesPerView: 3,
-            spaceBetween: 120
-          },
-          1440: {
-            slidesPerView: 4,
-            spaceBetween: 100
+            slidesPerView: 5,
+            spaceBetween: 40
           }
         }}
       >
